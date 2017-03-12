@@ -1,0 +1,14 @@
+<li class="row">
+    <span class="itemName"><img src="{{ item.picture.getThumb(150,150) }}" alt="{{ item.name }}" />{{ item.name }}</span>
+    <span class="quantity">
+        {% if not page %}
+            <input id="qty-{{ item.rowid }}" name="qty-{{ item.rowid }}" type="number" value="{{ item.qty }}" class="form-control">
+        {% else %}
+            {{ item.qty }}
+        {% endif %}
+    </span>
+    <span class="price">{{ __SELF__.shopCurrency.symbol_left }}{{ item.price }}{{ __SELF__.shopCurrency.symbol_right }}</span>
+    <span class="price">{{ __SELF__.shopCurrency.symbol_left }}{{ item.discount }}{{ __SELF__.shopCurrency.symbol_right }}</span>
+    <span class="price">{{ __SELF__.shopCurrency.symbol_left }}{{ item.subtotal }}{{ __SELF__.shopCurrency.symbol_right }}</span>
+    <span class="popbtn"><a class="arrow"></a></span>
+</li>

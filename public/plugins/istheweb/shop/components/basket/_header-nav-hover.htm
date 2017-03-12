@@ -1,0 +1,30 @@
+
+{% if basketCount %}
+    <ul class="header-cart-products">
+        {% for item in basketItems %}
+            {% partial __SELF__~'::_header-nav-item' item=item %}
+        {% endfor %}
+    </ul>
+
+<div class="total-price">
+    <h3>Total <span>{{ __SELF__.shopCurrency.symbol_left }}{{ basketSubtotal }} {{ __SELF__.shopCurrency.symbol_right }}</span></h3>
+</div>
+<div class="header-cart-action">
+
+    <div class="col-xs-6 cart-action-row">
+        <a id="ver-carrito" class="text-center warning-default-btn" href="{{ '/basket'|app }}">
+            <i class="fa fa-eye"></i> {{ 'Ver'|_ }}
+        </a>
+    </div>
+
+    <div class="col-xs-6 cart-action-row">
+        <a id="comprar" class="text-center info-default-btn" href="{{ '/checkout'|app }}">
+            <i class="fa fa-shopping-cart"></i> {{ 'Comprar'|_ }}
+        </a>
+    </div>
+
+</div>
+{% else %}
+<p>No hay artículos en el carrito</p>
+{% endif %}
+

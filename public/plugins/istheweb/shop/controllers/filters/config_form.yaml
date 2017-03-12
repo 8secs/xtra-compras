@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: istheweb.shop::lang.filter.label
+
+# Model Form Field configuration
+form: $/istheweb/shop/models/filter/fields.yaml
+
+# Model Class name
+modelClass: Istheweb\Shop\Models\Filter
+
+# Default redirect location
+defaultRedirect: istheweb/shop/filters
+
+# Create page
+create:
+    title: istheweb.shop::lang.filter.create_title
+    redirect: istheweb/shop/filters/update/:id
+    redirectClose: istheweb/shop/filters
+
+# Update page
+update:
+    title: istheweb.shop::lang.filter.update_title
+    redirect: istheweb/shop/filters
+    redirectClose: istheweb/shop/filters
+
+# Preview page
+preview:
+    title: istheweb.shop::lang.filter.preview_title

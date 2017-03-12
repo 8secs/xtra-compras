@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Currency
+
+# Model Form Field configuration
+form: $/istheweb/shop/models/currency/fields.yaml
+
+# Model Class name
+modelClass: Istheweb\Shop\Models\Currency
+
+# Default redirect location
+defaultRedirect: istheweb/shop/currencies
+
+# Create page
+create:
+    title: istheweb.shop::lang.currency.create_title
+    redirect: istheweb/shop/currencies/update/:id
+    redirectClose: istheweb/shop/currencies
+
+# Update page
+update:
+    title: istheweb.shop::lang.currency.update_title
+    redirect: istheweb/shop/currencies
+    redirectClose: istheweb/shop/currencies
+
+# Preview page
+preview:
+    title: istheweb.shop::lang.currency.preview_title

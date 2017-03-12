@@ -1,0 +1,10 @@
+<div class="order-summary">
+    {% if __SELF__.couponDisccount is not empty %}
+    <p><span>{{ 'Descuento cupón'|_ }}</span><span>- {{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.couponDisccount|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</span></p>
+    {% endif %}
+    <p><span>{{ 'Subtotal '|_ }}</span><span>{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.basketSubtotal|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</span></p>
+    <p><span>{{ 'Gastos envío estimados '|_ }}</span><span>{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.selectedShippingRate|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</span></p>
+    <p><span>{{ 'Impuestos'|_ }}</span><span>{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.basketTaxRate|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</span></p>
+    <h4><span>{{ 'Total'|_ }}</span><span>{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.basketTotal|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</span></h4>
+    <a href="{{ '/shop/checkout'|app }}" class="button color-hover {% if ShopBasket.basketCount == 0 %}disabled{% endif %}">{{ 'Tramitar pedido'|_ }}</a>
+</div>

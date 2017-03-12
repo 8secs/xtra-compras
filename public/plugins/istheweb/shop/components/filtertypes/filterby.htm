@@ -1,0 +1,47 @@
+{% set filterTypes = __SELF__.filter_types %}
+{% for type in filterTypes %}
+{% if type.filters.count > 0 %}
+<div class="sin-sidebar">
+    <h3 class="sidebar-title">{{ type.name }}</h3>
+    <div class="sidebar-wrapper fix">
+        <form id="filterForm_{{ type.name }}" class="form-inline{% if loop.index == 1 %} {% endif %}" data-request="onFilterSubmit"
+              data-request-update="'Products::default': '.products'"
+              data-request-success="resetToolbar()">
+                {% for filter in type.filters %}
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" name="{{ filter.id }}">{{ filter.name }} {# filter.products.count #}
+                    </label>
+                </div>
+                {% endfor %}
+
+            <div><p id="result"></p></div>
+
+            <div class="form-group">
+                <button type="submit" class="btn-filters btn-apply-filter"><i class="fa fa-pencil"></i> {{ 'Aplicar'|_ }}</button>
+                <button id="{{ type.name }}" class="btn-filters btn-clear-filter"><i class="fa fa-times-circle"></i> {{ 'Limpiar'|_ }}</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endif %}
+{% endfor %}
+
+{% put scripts %}
+<script type="text/javascript">
+
+    function resetToolbar(){
+        $('#grid').addClass('active');
+        $('#list').removeClass('active');
+    }
+
+    $(document).ready(function(){
+        $('.clear-filter').on('click', function(e){
+            var id = $(this).attr('id');
+            var form_id = '#filterForm_'+id;
+            $(form_id).find('input').prop('checked', false);
+            e.preventDefault();
+        });
+    });
+</script>
+{% endput %}

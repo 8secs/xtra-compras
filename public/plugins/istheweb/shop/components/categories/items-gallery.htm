@@ -1,0 +1,17 @@
+<div class="grid">
+    <div class="grid">
+        <div class="isotope {{ class }}">
+            {% for category in categories %}
+
+            <div class="grid-item listing-effect ">
+                <a href="{{ category.url }}">
+                    <img class="img-fluid" src="{{ category.picture.getPath() }}" alt="{{ params.name }}" >
+                    <div class="work-detail">
+                        <h3 class="listing-effect-title">{{ category.name }}</h3>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

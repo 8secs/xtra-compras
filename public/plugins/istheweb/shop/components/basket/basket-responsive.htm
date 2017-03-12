@@ -1,0 +1,27 @@
+<div class="cart-products">
+    <table class="table cart-table text-center">
+        <thead>
+        <tr>
+            <th class="number">#</th>
+            <th class="image">{{ 'Imagen'|_ }}</th>
+            <th class="name">{{ 'Producto'|_ }}</th>
+            <th class="qty">{{ 'Cantidad'|_ }}</th>
+            <th class="price">{{ 'Precio'|_ }}</th>
+            <th class="total">{{ 'Total'|_ }}</th>
+            <th class="remove">{{ 'Eliminar'|_ }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if __SELF__.basketCount > 0 %}
+            {% for item in __SELF__.basketItems %}
+                {% partial __SELF__~'::_item' item=item %}
+            {% endfor %}
+
+        {% else %}
+        <tr>
+            <td colspan="7">{{ 'No hay artículos en tu carrito.'|_ }} </td>
+        </tr>
+        {% endif %}
+        </tbody>
+    </table>
+</div>

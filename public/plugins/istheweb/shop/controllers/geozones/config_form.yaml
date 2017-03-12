@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Geo State
+
+# Model Form Field configuration
+form: $/istheweb/shop/models/geozone/fields.yaml
+
+# Model Class name
+modelClass: Istheweb\Shop\Models\GeoZone
+
+# Default redirect location
+defaultRedirect: istheweb/shop/geozones
+
+# Create page
+create:
+    title: istheweb.shop::lang.geo_zone.create_title
+    redirect: istheweb/shop/geozones/update/:id
+    redirectClose: istheweb/shop/geozones
+
+# Update page
+update:
+    title: istheweb.shop::lang.geo_zone.update_title
+    redirect: istheweb/shop/geozones
+    redirectClose: istheweb/shop/geozones
+
+# Preview page
+preview:
+    title: istheweb.shop::lang.geo_zone.preview_title

@@ -1,0 +1,18 @@
+{% set products = __SELF__.products %}
+{% set noProductMessage = __SELF__.noProductMessage %}
+
+<div class="products">
+    {% partial __SELF__ ~ "::grid-products" products = products noProductMessage = noProductMessage type='grid' %}
+    {% partial __SELF__ ~ "::list-products" products = products noProductMessage = noProductMessage type='list' %}
+</div>
+<!-- pagination start -->
+<div class="shop-pagination">
+    <div class="pagination">
+        {% partial __SELF__ ~ '::_pagination' products = products %}
+    </div>
+</div>
+
+
+
+
+

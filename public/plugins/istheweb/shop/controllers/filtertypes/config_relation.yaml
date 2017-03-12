@@ -1,0 +1,8 @@
+filters:
+    label: istheweb.shop::lang.filters.menu_label
+    manage:
+        form: $/istheweb/shop/models/filter/fields.yaml
+        list: $/istheweb/shop/models/filter/columns.yaml
+    view:
+        list: $/istheweb/shop/models/filter/columns.yaml
+        toolbarButtons: create|delete

@@ -1,0 +1,33 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+
+    title:
+        label: istheweb.ispdf::lang.templates.title
+        span: left
+
+    code@create:
+        label: istheweb.ispdf::lang.templates.code
+        comment: istheweb.ispdf::lang.templates.code_comment
+        span: right
+        preset: title
+
+    layout:
+        label: istheweb.ispdf::lang.templates.layout
+        type: relation
+        emptyOption: istheweb.ispdf::lang.templates.empty_option
+        span: auto
+
+    description:
+        label: istheweb.ispdf::lang.templates.description
+        type: textarea
+        size: tiny
+
+    content_html:
+        label: istheweb.ispdf::lang.templates.content_html
+        type: codeeditor
+        size: giant
+        tab: istheweb.ispdf::lang.templates.content_html
+        language: html

@@ -1,0 +1,8 @@
+features:
+    label: istheweb.shop::lang.features.menu_label
+    manage:
+        form: $/istheweb/shop/models/feature/fields.yaml
+        list: $/istheweb/shop/models/feature/columns.yaml
+    view:
+        list: $/istheweb/shop/models/feature/columns.yaml
+        toolbarButtons: create|delete

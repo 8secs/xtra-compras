@@ -1,0 +1,27 @@
+{% set addressType = __SELF__.addressType ?: type %}
+<label for="countries_{{ addressType }}">País </label>
+<select id="countries_{{ addressType }}" name="countries_{{ addressType }}" class="form-control" onchange="onCountryChange('{{ addressType }}')" required>
+    <option value="">{{ 'Selecciona un país'|__ }}</option>
+    {% for country in __SELF__.countries %}
+        {% if country.id == address.country_id %}
+            <option value="{{ country.id }}" selected>{{ country.name }}</option>
+        {% else %}
+            <option value="{{ country.id }}">{{ country.name }}</option>
+        {% endif %}
+    {% endfor %}
+</select>
+
+{% put scripts %}
+<script type="text/javascript">
+    function onCountryChange(type){
+        console.log(type);
+        var countryOption = "#countries_"+type + " option:selected";
+        $('#country_'+type).val($(countryOption).val());
+        $('#countryForm_'+type).submit();
+
+    }
+</script>
+{% endput %}
+
+
+

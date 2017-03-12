@@ -1,0 +1,91 @@
+<form id="payment-form">
+    <div class="modal-body">
+        <span class="payment-errors"></span>
+
+        <div class="form-group">
+            <label>Card Number
+                <input type="text" class="form-control" size="20" data-stripe="number">
+            </label>
+
+        </div>
+
+        <div class="form-group">
+            <label>
+                Expiration (MM/YY)
+                <input type="text" class="form-control" size="2" data-stripe="exp_month">
+            </label>
+            <label> /
+                <input type="text" size="2" class="form-control" data-stripe="exp_year">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>
+                <span>CVC</span>
+                <input type="text" size="4" class="form-control" data-stripe="cvc">
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label>
+                <span>Billing Zip</span>
+                <input type="text" size="6" class="form-control" data-stripe="address_zip">
+            </label>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="button transparent color-hover" data-dismiss="modal">Close</button>
+        <button type="submit" class="button color-hover stripe_submit">Tramitar pedido</button>
+    </div>
+
+
+
+</form>
+
+{% put scripts %}
+<script type="text/javascript">
+    $(function() {
+        var $form = $('#payment-form');
+        $form.submit(function(event) {
+            // Disable the submit button to prevent repeated clicks:
+            $form.find('.stripe_submit').prop('disabled', true);
+
+            // Request a token from Stripe:
+            Stripe.card.createToken($form, stripeResponseHandler);
+
+            // Prevent the form from being submitted:
+            return false;
+        });
+    });
+
+    function stripeResponseHandler(status, response) {
+        // Grab the form:
+        var $form = $('#payment-form');
+
+        if (response.error) { // Problem!
+
+            // Show the errors on the form:
+            $form.find('.payment-errors').text(response.error.message);
+            $form.find('.stripe_submit').prop('disabled', false); // Re-enable submission
+
+        } else { // Token was created!
+
+            // Get the token ID:
+            var token = response.id;
+
+            // Insert the token ID into the form so it gets submitted to the server:
+            $form.append($('<input type="hidden" name="stripeToken">').val(token));
+
+            // Submit the form:
+            $form.request('onCheckout', {
+                'success': function(data){
+                    if(data.error == 0){
+                        location.reload();
+                    }
+                }
+            });
+            //$form.get(0).submit();
+        }
+    };
+</script>
+{% endput %}

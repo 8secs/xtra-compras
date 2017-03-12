@@ -1,0 +1,8 @@
+geo_zone:
+    label: istheweb.shop::lang.geo_zone.label
+    view:
+        form: $/istheweb/shop/models/geozone/fields.yaml
+        toolbarButtons: link|unlink
+    manage:
+        form: $/istheweb/shop/models/geozone/fields.yaml
+        list: $/istheweb/shop/models/geozone/columns.yaml

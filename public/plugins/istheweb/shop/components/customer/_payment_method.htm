@@ -1,0 +1,95 @@
+{% if __SELF__.shopCheckoutSteps != 2 %}
+    {{ form_ajax('onPaymentMethod') }}
+{% endif %}
+    <p>{{ 'Selecciona tu método de pago preferido, por favor.'|_ }}</p>
+    <div class="form-group">
+    {% for key,value in ShopBasket.paymentMethods %}
+        <label><input name="payment_method" value="{{ key }}" type="radio" class="form-inline" {% if key == __SELF__.paymentMethod %} checked {% endif %}>&nbsp; {{ value|raw }} &nbsp;</label>
+    {% endfor %}
+    </div>
+    <div class="form-group">
+        <label for="comment">
+            {{ 'Si quieres añadir un comentario'|_ }}
+        </label>
+        <textarea id="comment" name="comment" rows="8" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="agree">
+            {{ 'He leído y acepto los '|_ }} <a href="#" class="agree"><b>{{ 'términos y condiciones'|_ }}</b></a>
+        </label>
+        <input id="agree" name="agree" type="checkbox" onchange="agreeChange(this)">
+    </div>
+
+    <div class="paypal-info">
+
+    </div>
+
+    {% if __SELF__.shopCheckoutSteps > 3 %}
+    <div class="form-group">
+        <button id="paymentMethodSubmit" type="submit" class="button color-hover" disabled>{{ 'Siguiente'|_ }}</button>
+    </div>
+    {% endif %}
+
+{% set pmethod = Checkout.get('payment_method') %}
+{{ pmethod }}
+
+{% if __SELF__.shopCheckoutSteps != 2 %}
+{{ form_close() }}
+{% endif %}
+
+{% put scripts %}
+<script  type="text/javascript">
+
+    var selectedPayment, shopCheckoutSteps;
+
+    function agreeChange(element){
+        if(element.checked){
+            if(shopCheckoutSteps != 2)
+                $('#paymentMethodSubmit').prop('disabled', false);
+            else
+                $('#submit').removeClass('disabled');
+        }
+    }
+
+    function setPaymentInfo(value){
+        if(value == 'paypal'){
+            $('.paypal-info').html('<p><span class="label label-info">Recuerda:</span><small> {{ "Si vas a pagar a través de PayPal con tarjeta no tienes que activar el checkbox  del registro con PayPal, ya que puede que no finalices tu compra.<br>La comisión aplicada por el pago a través de PayPal es del 2%"|_ }} </small></p>');
+            $('.paypal-info').show('slow');
+        }else if(value == 'cash'){
+            $('.paypal-info').html('<p><span class="label label-info">Recuerda:</span><small> {{ "La comisión aplicada por el pago a contrarembolso es del 6%"|_ }}</small></p>');
+            $('.paypal-info').show('slow');
+        }else{
+            $('.paypal-info').html('');
+            $('.paypal-info').show('hide');
+        }
+    }
+
+    $(document).ready(function(){
+
+        shopCheckoutSteps = {{ __SELF__.shopCheckoutSteps }};
+
+        $('.paypal-info').hide();
+
+        if($("input[name=payment_method]:checked")){
+            selectedPayment = $("input[name=payment_method]:checked").val();
+            setPaymentInfo(selectedPayment);
+        }
+
+        $("input[name=payment_method]:radio").change(function(e){
+            selectedPayment = $(this).val();
+            setPaymentInfo($(this).val());
+
+            if(shopCheckoutSteps == 2){
+
+                $.request('onPaymentFee', {
+                    'data': {'method': $(this).val() },
+                    'update': {'ShopBasket::_resume-content': '.resume'}
+                });
+            }
+
+            e.preventDefault();
+        });
+    });
+</script>
+{% endput %}

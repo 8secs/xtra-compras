@@ -1,0 +1,19 @@
+<ul class="nav-basket">
+    <li>
+        <a href="#">
+            <span class="cart-icon"><i class="fa fa-shopping-cart"></i></span> <span class="cart-no">Carrito: ({{ ShopBasket.basketCount }})</span>
+        </a>
+        <div class="mini-cart-content">
+            {% if __SELF__.basketCount %}
+                {% for item in __SELF__.basketItems %}
+                    {% partial __SELF__~'::_basket-item' item=item %}
+                {% endfor %}
+            {% endif %}
+            <div class="cart-inner-bottom">
+                <p class="total">Subtotal: <span class="amount">{{ __SELF__.shopCurrency.symbol_left }}{{ ShopBasket.basketSubtotal }}{{ __SELF__.shopCurrency.symbol_right }}</span></p>
+                <div class="clear"></div>
+                <p class="cart-button-top"><a href="{{ '/basket'|app }}">Checkout</a></p>
+            </div>
+        </div>
+    </li>
+</ul>

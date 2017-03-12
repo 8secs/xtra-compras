@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Order Status
+
+# Model Form Field configuration
+form: $/istheweb/shop/models/orderstatus/fields.yaml
+
+# Model Class name
+modelClass: Istheweb\Shop\Models\OrderStatus
+
+# Default redirect location
+defaultRedirect: istheweb/shop/orderstatuses
+
+# Create page
+create:
+    title: istheweb.shop::lang.order_status.create_title
+    redirect: istheweb/shop/orderstatuses/update/:id
+    redirectClose: istheweb/shop/orderstatuses
+
+# Update page
+update:
+    title: istheweb.shop::lang.order_status.update_title
+    redirect: istheweb/shop/orderstatuses
+    redirectClose: istheweb/shop/orderstatuses
+
+# Preview page
+preview:
+    title: istheweb.shop::lang.order_status.preview_title

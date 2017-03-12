@@ -1,0 +1,17 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    order:
+        label: istheweb.shop::lang.order.label
+        type: recordfinder
+        list: $/istheweb/shop/models/order/columns.yaml
+        prompt: Haz click en el botón %s para encontrar tu pedido
+        nameFrom: total
+    paypal_id:
+        label: istheweb.shop::lang.labels.paypal_payment_id
+        required: true
+    paypal_state:
+        label: istheweb.shop::lang.labels.estado
+        span: auto

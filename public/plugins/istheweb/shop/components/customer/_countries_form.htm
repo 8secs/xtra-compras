@@ -1,0 +1,7 @@
+{% set addressType = __SELF__.addressType ?: type %}
+
+<form id="countryForm_{{ addressType }}" data-request="onCountryChange" data-request-update="'Customer::_states': '#states_div_{{ addressType }}'">
+    <input type="hidden" name="country_{{ addressType }}" id="country_{{ addressType }}" />
+    <input type="hidden" id="addressType" name="addressType" value="{{ addressType }}" />
+</form>
+

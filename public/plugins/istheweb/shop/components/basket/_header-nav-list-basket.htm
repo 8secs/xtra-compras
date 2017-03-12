@@ -1,0 +1,15 @@
+{% set basketCount = __SELF__.basketCount %}
+{% set basketItems = __SELF__.basketItems %}
+{% set basketSubtotal = __SELF__.basketSubtotal %}
+<div class="header-cart nav-basket">
+    <div class="text-center">
+        <a href="#">
+            <i class="fa fa-shopping-cart"></i>
+            <span class="shop-count">{{ basketCount }}</span>
+            {% if basketCount > 1 %} {{ 'artículos'|_ }} {% else %} {{ 'artículo'|_ }} {% endif %}
+        </a>
+    </div>
+    <div class="header-cart-hover">
+        {% partial __SELF__~'::_header-nav-hover' basketCount=basketCount basketItems=basketItems basketSubtotal = basketSubtotal %}
+    </div>
+</div>

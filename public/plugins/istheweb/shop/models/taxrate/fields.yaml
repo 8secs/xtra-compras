@@ -1,0 +1,27 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: istheweb.shop::lang.labels.name
+        required: true
+    type:
+        label: istheweb.shop::lang.labels.type
+        span: auto
+        required: true
+        type: dropdown
+        options:
+            P: istheweb.shop::lang.labels.percentage
+            F: istheweb.shop::lang.labels.fix
+    rate:
+        label: istheweb.shop::lang.labels.rate
+        span: auto
+    geo_zone:
+        label: istheweb.shop::lang.geo_zones.menu_label
+        type: recordfinder
+        list: ~/plugins/rainlab/location/models/country/columns.yaml
+        prompt: istheweb.shop::lang.geo_zones.record_finder
+        nameFrom: name
+        span: auto
+        tab: istheweb.shop::lang.geo_zones.menu_label

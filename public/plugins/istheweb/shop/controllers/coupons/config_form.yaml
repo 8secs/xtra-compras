@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Coupon
+
+# Model Form Field configuration
+form: $/istheweb/shop/models/coupon/fields.yaml
+
+# Model Class name
+modelClass: Istheweb\Shop\Models\Coupon
+
+# Default redirect location
+defaultRedirect: istheweb/shop/coupons
+
+# Create page
+create:
+    title: istheweb.shop::lang.coupon.create_title
+    redirect: istheweb/shop/coupons/update/:id
+    redirectClose: istheweb/shop/coupons
+
+# Update page
+update:
+    title: istheweb.shop::lang.coupon.update_title
+    redirect: istheweb/shop/coupons
+    redirectClose: istheweb/shop/coupons
+
+# Preview page
+preview:
+    title: istheweb.shop::lang.coupon.preview_title

@@ -1,0 +1,24 @@
+<div class="add-to-links">
+    <div class="add-to-wishlist">
+        <form id="wishlistForm_{{ params.id }}" data-request="Customer::onAddProductToWishlist"
+              data-request-data="id: {{ params.id }}">
+            <a id="{{ params.id }}" class="wishlistBtn" href="javascript:{}" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><i class="fa fa-star"></i></a>
+        </form>
+    </div>
+    <!--<div class="compare-button">
+        <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><i class="fa fa-exchange"></i></a>
+    </div>-->
+</div>
+<div class="quickviewbtn">
+    <a href="{{ 'shop/product'|page({ slug: params.slug }) }}" data-toggle="tooltip" title="Quick View"><i class="fa fa-search-plus"></i></a>
+</div>
+
+{% put scripts %}
+<script type="text/javascript">
+    $('.wishlistBtn').on('click', function(e){
+        $('#wishlistForm_'+this.id).submit();
+        e.preventDefault();
+        return false;
+    });
+</script>
+{% endput %}

@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: istheweb.shop::lang.labels.name
+    description:
+        type: richeditor
+        label: istheweb.shop::lang.labels.description
+        tab: istheweb.shop::lang.labels.description
+    countries:
+        label: istheweb.shop::lang.labels.countries
+        type: partial
+        path: field_countries
+        span: auto
+        tab: istheweb.shop::lang.labels.countries
+    states:
+        label: istheweb.shop::lang.labels.states
+        type: partial
+        path: field_states
+        span: auto
+        tab: istheweb.shop::lang.labels.countries

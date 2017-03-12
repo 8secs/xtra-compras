@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Tax Rate
+
+# Model Form Field configuration
+form: $/istheweb/shop/models/taxrate/fields.yaml
+
+# Model Class name
+modelClass: Istheweb\Shop\Models\TaxRate
+
+# Default redirect location
+defaultRedirect: istheweb/shop/taxrates
+
+# Create page
+create:
+    title: istheweb.shop::lang.tax_rate.create_title
+    redirect: istheweb/shop/taxrates/update/:id
+    redirectClose: istheweb/shop/taxrates
+
+# Update page
+update:
+    title: istheweb.shop::lang.tax_rate.update_title
+    redirect: istheweb/shop/taxrates
+    redirectClose: istheweb/shop/taxrates
+
+# Preview page
+preview:
+    title: istheweb.shop::lang.tax_rate.preview_title

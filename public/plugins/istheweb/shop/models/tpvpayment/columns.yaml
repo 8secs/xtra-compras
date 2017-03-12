@@ -1,0 +1,17 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    tpv_order:
+        label: istheweb.shop::lang.labels.tpv_order
+        searchable: true
+    estado:
+        label: istheweb.shop::lang.labels.estado
+        searchable: true
+    tpv_response:
+        label: istheweb.shop::lang.labels.tpv_response
+        searchable: true
+    auth_code:
+        label: istheweb.shop::lang.labels.auth_code
+        searchable: true

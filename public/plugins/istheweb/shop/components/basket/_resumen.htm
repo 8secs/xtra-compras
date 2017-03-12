@@ -1,0 +1,14 @@
+
+{% partial __SELF__ ~ '::_resume-content' %}
+
+<form data-request="onCheckout"
+      data-request-success="checkoutSuccess(data)">
+    <input type="hidden" name="email" value="{{ recipientEmail }}" />
+    <button type="submit" class="button color-hover">{{ 'Comprar ahora'|_ }}</button>
+</form>
+
+{% partial __SELF__ ~ '::_tpv_form' %}
+
+
+
+

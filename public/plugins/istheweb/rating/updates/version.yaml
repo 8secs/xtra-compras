@@ -1,0 +1,4 @@
+1.0.1: First version of Rating
+1.0.2:
+  - Create ratings table
+  - create_ratings_table.php

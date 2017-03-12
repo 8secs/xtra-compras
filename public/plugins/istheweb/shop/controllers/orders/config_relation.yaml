@@ -1,0 +1,56 @@
+customer:
+    label: istheweb.shop::lang.labels.customer
+    view:
+        form: $/istheweb/shop/models/customer/fields.yaml
+        toolbarButtons: create|link|unlink
+    manage:
+        form: $/istheweb/shop/models/customer/fields.yaml
+        list: $/istheweb/shop/models/customer/columns.yaml
+        showSearch: true
+        scope: searchTerm
+        context: create
+products:
+    label: istheweb.shop::lang.products.menu_label
+    view:
+        list: $/istheweb/shop/models/product/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/istheweb/shop/models/product/columns.yaml
+
+shipping_address:
+    label: istheweb.shop::lang.labels.shipping_address
+    view:
+        form: $/istheweb/shop/models/address/fields.yaml
+        toolbarButtons: create|link|unlink
+    manage:
+        form: $/istheweb/shop/models/address/fields.yaml
+        list: $/istheweb/shop/models/address/columns.yaml
+        showSearch: true
+
+billing_address:
+    label: istheweb.shop::lang.labels.billing_address
+    view:
+        form: $/istheweb/shop/models/address/fields.yaml
+        toolbarButtons: create|link|unlink
+    manage:
+        form: $/istheweb/shop/models/address/fields.yaml
+        list: $/istheweb/shop/models/address/columns.yaml
+        showSearch: true
+tpv_payment:
+    label: istheweb.shop::lang.labels.tpv_payment
+    view:
+        form: $/istheweb/shop/models/tpvpayment/fields.yaml
+        toolbarButtons: link|unlink
+    manage:
+        form: $/istheweb/shop/models/tpvpayment/fields.yaml
+        list: $/istheweb/shop/models/tpvpayment/columns.yaml
+paypal_payment:
+    label: istheweb.shop::lang.labels.paypal_payment
+    view:
+        form: $/istheweb/shop/models/paypalpayment/fields.yaml
+        toolbarButtons: link|unlink
+    manage:
+        form: $/istheweb/shop/models/paypalpayment/fields.yaml
+        list: $/istheweb/shop/models/paypalpayment/columns.yaml

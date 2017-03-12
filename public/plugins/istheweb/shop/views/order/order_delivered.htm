@@ -1,0 +1,88 @@
+<style type="text/css">
+    body,
+    html,
+    .body {
+        background: #f3f3f3 !important;
+    }
+    .header {
+        background: #8a8a8a;
+    }
+    .header .columns {
+        padding-bottom: 0;
+    }
+    .header p {
+        color: #fff;
+        padding-top: 15px;
+    }
+    .header .wrapper-inner {
+        padding: 20px;
+    }
+    .header .container {
+        background: transparent;
+    }
+    table.button.facebook table td {
+        background: #3B5998 !important;
+        border-color: #3B5998;
+    }
+    table.button.twitter table td {
+        background: #1daced !important;
+        border-color: #1daced;
+    }
+    table.button.google table td {
+        background: #DB4A39 !important;
+        border-color: #DB4A39;
+    }
+    .wrapper.secondary {
+        background: #f3f3f3;
+    }
+</style>
+
+<container>
+
+    <spacer size="16"></spacer>
+
+    <row class="footer text-center">
+        <columns large="3">
+            <img src="https://dxbwatch.es/storage/app/media/logo.png" alt="Dxbwatch">
+        </columns>
+    </row>
+
+    <row>
+        <columns>
+            <h1>Pedido enviado del sitio web: {{ site }}. Pedido Nº {{ pdfNumber }} </h1>
+            <p>Estimado {{ name }}. <br>
+                Su pedido con fecha {{ 'now'|date('d-m-Y') }} ha sido entregado por MRW en la dirección que usted nos ha indicado.
+            </p>
+
+
+            <spacer size="16"></spacer>
+
+            <callout class="secondary">
+                <row>
+                    <columns large="6">
+                        <p>
+                            <strong>Agradecimientos:</strong><br>
+                        </p>
+                        <p>
+                            Te agradecemos de antemano que nos dejes tu valoración. Cuantos más clientes nos faciliten su opinión, más
+                            podremos mejorar nuestro servicio de empaquetado y entrega. Gracias por tu colaboración
+                        </p>
+                        <p><strong>Información adicional</strong></p>
+                        <p>Para poder seguir mejorando el funcionamiento de nuestra empresa, le agradeceríamos que nos remitiera
+                            cualquier comentario a cerca del producto, atención al cliente, o transporte a la siguiente dirección de email:<br>
+                            <span style="text-align:center;"><a href="mailto:calidad@dxbwatch.es">calidad@dxbwatch.es</a></span>
+                        </p>
+                    </columns>
+
+                </row>
+            </callout>
+
+        </columns>
+    </row>
+
+    <hr/>
+
+    <p>GRACIAS POR CONFIAR EN <a href="https://dxbwatch.es/">www.dxbwatch.es</a> esperemos haya quedado satisfecho con el producto
+        adquirido.</p>
+
+</container>

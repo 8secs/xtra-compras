@@ -1,0 +1,34 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+categories:
+    label: istheweb.shop::lang.categories.menu_label
+    view:
+        list: $/istheweb/shop/models/category/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/istheweb/shop/models/category/columns.yaml
+        form: $/istheweb/shop/models/category/fields.yaml
+filters:
+    label: istheweb.shop::lang.filters.menu_label
+    view:
+        list: $/istheweb/shop/models/filter/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/istheweb/shop/models/filter/columns.yaml
+        form: $/istheweb/shop/models/filter/fields.yaml
+features:
+    label: istheweb.shop::lang.features.menu_label
+    view:
+        list: $/istheweb/shop/models/feature/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/istheweb/shop/models/feature/columns.yaml
+        form: $/istheweb/shop/models/feature/fields.yaml

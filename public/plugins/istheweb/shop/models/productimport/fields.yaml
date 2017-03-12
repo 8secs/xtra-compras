@@ -1,0 +1,65 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    update_existing:
+        label: Update existing posts
+        comment: Check this box to update posts that have exactly the same ID, title or slug.
+        type: checkbox
+        default: true
+        span: left
+
+    auto_create_categories:
+        label: Create categories specified in the import file
+        comment: You should match the Categories column to use this feature, otherwise select the default categories to use from the items below.
+        type: checkbox
+        default: true
+        span: right
+
+    product_categories:
+        label: Categories
+        commentAbove: Select the categories that imported posts will belong to (optional).
+        type: checkboxlist
+        span: right
+        cssClass: field-indent
+        trigger:
+            action: hide
+            field: auto_create_categories
+            condition: checked
+
+    auto_create_filters:
+        label: Create filters specified in the import file
+        comment: You should match the Filters column to use this feature, otherwise select the default filters to use from the items below.
+        type: checkbox
+        default: true
+        span: right
+
+    product_filters:
+        label: Filters
+        commentAbove: Select the filters that imported products will belong to (optional).
+        type: checkboxlist
+        span: right
+        cssClass: field-indent
+        trigger:
+            action: hide
+            field: auto_create_filters
+            condition: checked
+
+    auto_create_features:
+        label: Create features specified in the import file
+        comment: You should match the Features column to use this feature, otherwise select the default categories to use from the items below.
+        type: checkbox
+        default: true
+        span: right
+
+    product_features:
+        label: Features
+        commentAbove: Select the features that imported products will belong to (optional).
+        type: checkboxlist
+        span: right
+        cssClass: field-indent
+        trigger:
+            action: hide
+            field: auto_create_features
+            condition: checked

@@ -1,0 +1,21 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id: ID
+    name: istheweb.shop::lang.labels.name
+    slug: istheweb.shop::lang.labels.slug
+    description: istheweb.shop::lang.labels.description
+    categories: istheweb.shop::lang.categories.menu_label
+    filters: istheweb.shop::lang.filters.menu_label
+    features: istheweb.shop::lang.features.menu_label
+    modelo: istheweb.shop::lang.labels.model
+    is_stockable: istheweb.shop::lang.labels.stockable
+    is_featured: istheweb.shop::lang.labels.featured
+    stock: istheweb.shop::lang.labels.quantity
+    published_at: istheweb.shop::lang.labels.published_at
+    created_at: istheweb.shop::lang.labels.created_at
+    updated_at: istheweb.shop::lang.labels.updated_at
+    on_sale: istheweb.shop::lang.labels.sale
+    discount: istheweb.shop::lang.labels.discount_price

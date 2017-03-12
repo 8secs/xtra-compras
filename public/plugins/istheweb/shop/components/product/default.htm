@@ -1,0 +1,9 @@
+{% set product = __SELF__.product %}
+
+<div class="row" id="productMain">
+    <div id="mainImage">
+        <img src="{{ product.picture.getPath() }}" alt="{{ product.name }}" class="img-fluid" width="400">
+    </div>
+</div>
+
+

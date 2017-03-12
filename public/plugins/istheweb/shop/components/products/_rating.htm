@@ -1,0 +1,18 @@
+{% if params.averageRating is not empty %}
+    {% set averageRating = params.averageRating %}
+    {% set stars = 4 %}
+    {% for i in 0..stars %}
+        {% set its = averageRating - (i+1) %}
+        {% if its > 0 %}
+            <i class="fa fa-star"></i>
+        {% elseif its == -0.5 %}
+            <i class="fa fa-star-half-o"></i>
+        {% else %}
+            <i class="fa fa-star-o"></i>
+        {% endif %}
+    {% endfor %}
+{% else %}
+    {% for i in 1..5 %}
+        <i class="fa fa-star-o"></i>
+    {% endfor %}
+{% endif %}

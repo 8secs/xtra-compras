@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Order
+
+# Model Form Field configuration
+form: $/istheweb/shop/models/order/fields.yaml
+
+# Model Class name
+modelClass: Istheweb\Shop\Models\Order
+
+# Default redirect location
+defaultRedirect: istheweb/shop/orders
+
+# Create page
+create:
+    title: Create Order
+    redirect: istheweb/shop/orders/update/:id
+    redirectClose: istheweb/shop/orders
+
+# Update page
+update:
+    title: Edit Order
+    redirect: istheweb/shop/orders
+    redirectClose: istheweb/shop/orders
+
+# Preview page
+preview:
+    title: Preview Order

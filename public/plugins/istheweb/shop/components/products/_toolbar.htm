@@ -1,0 +1,51 @@
+{% set products = __SELF__.products %}
+{% set sortOrder = __SELF__.getSortOrderOptions() %}
+<div class="view-mode">
+    <a id="grid" class="active" href="#"><i class="fa fa-th-large"></i></a>
+    <a id="list" class="" href="#"><i class="fa fa-th-list"></i></a>
+</div>
+<div class="show-result">
+    <p> Mostrando 1–10 de {{ products.count }} resultados</p>
+</div>
+<div class="toolbar-form">
+        <div class="tolbar-select">
+            <form id="sortForm" data-request="onSortOrder"
+                  data-request-update="'Products::default': '.products'"
+                  data-request-success="resetToolbar()">
+                <input type="hidden" id="sort" name="sort" />
+                <select id="sortList">
+                    {% for key, value in sortOrder %}
+                    <option value="{{ key }}">{{ value }}</option>
+                    {% endfor %}
+                </select>
+            </form>
+        </div>
+</div>
+
+{% put scripts %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('.view-mode a').on('click', function(e){
+            var id = $(this).attr('id');
+            if(id == 'list'){
+                $('#grid').removeClass('active');
+                $('.grid-view').hide('slow');
+                $('.list-view').show('slow');
+            }else{
+                $('#list').removeClass('active');
+                $('.list-view').hide('slow');
+                $('.grid-view').show('slow');
+
+            }
+            $(this).addClass('active');
+            e.preventDefault();
+        });
+
+        $('#sortList').change(function(e){
+            $('#sort').val($(this).val());
+            $('#sortForm').submit();
+        });
+
+    });
+</script>
+{% endput %}

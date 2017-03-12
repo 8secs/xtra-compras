@@ -1,0 +1,43 @@
+<li class="num-items-mini-cart">
+    <!--<a class="remove-from-cart"></a>-->
+    <a class="remove-from-cart"
+            data-request="{{ __SELF__ }}::onRemoveProduct"
+            data-request-data="row_id: '{{ item.rowid }}'"
+            data-request-update="'ShopBasket::_shopping-cart': '.nav-basket',
+                                'ShopBasket::_cart': '.cart',
+                                'ShopBasket::default': '.cart-products',
+                                'ShopBasket::_order-summary': '.order-summary'"
+            data-request-success="refreshCart();"></a>
+    <a class="cart-link">
+        <div class="cart-product-list">
+            <div class="cart-preview-image">
+                <img src="{{ item.picture.getThumb(100,100) }}" alt="{{ item.name }}" />
+            </div>
+            <div class="cart-preview-info">
+                <ul class="cart-list-container">
+                    <li class="list-item-title">
+                        <div><strong>{{ item.name }}</strong></div>
+                    </li>
+                    <li class="list-item-variants">
+                        <div class="variants">
+                            <p class="variant-title"></p>
+                            <p class="variant-name"></p>
+                        </div>
+                    </li>
+                    <li class="list-item-stock-price">
+                        <span class="cart-preview-units">
+                            <input class="cart-preview-units-text" disabled value="{{ item.qty }}" />
+                        </span>
+                        <span class="price">
+                            <h2 class="current">
+                                <span class="cents">{{ __SELF__.shopCurrency.symbol_left }}</span>
+                                {{ item.price }}
+                                <span class="cents">{{ __SELF__.shopCurrency.symbol_right }}</span>
+                            </h2>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </a>
+</li>

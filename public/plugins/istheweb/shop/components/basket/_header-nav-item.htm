@@ -1,0 +1,18 @@
+
+<li>
+    <div class="image"><img src="{{ item.picture.getThumb(50,50) }}" alt="{{ item.name }}" /></div>
+    <div class="content fix">
+        <a href="#">{{ item.name }}</a>
+        <span class="price">{{ item.qty }} <small>x</small> {{ __SELF__.shopCurrency.symbol_left }}{{ item.price }} {{ __SELF__.shopCurrency.symbol_right }}</span>
+    </div>
+    <div class="delete">
+        <button type="submit" class="btn btn-sm btn-danger pull-right"
+                data-request="{{ __SELF__ }}::onRemoveProduct"
+                data-request-data="row_id: '{{ item.rowid }}'"
+                data-request-update="'ShopBasket::_header-nav-list-basket': '.nav-basket',
+                            'ShopBasket::default': '.cart-products',
+                            'ShopBasket::_order-summary': '.order-summary'">
+            <i class="fa fa-trash-o"></i>
+        </button>
+    </div>
+</li>

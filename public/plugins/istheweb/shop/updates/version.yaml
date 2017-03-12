@@ -1,0 +1,38 @@
+1.0.1: First version of Shop
+1.0.2:
+  - Create Models of IsTheWeb shop
+  - create_addresses_table.php
+  - create_categories_table.php
+  - create_coupons_table.php
+  - create_currencies_table.php
+  - create_customers_table.php
+  - create_features_table.php
+  - create_feature_types_table.php
+  - create_filter_types_table.php
+  - create_filters_table.php
+  - create_geo_zones_table.php
+  - create_order_statuses_table.php
+  - create_orders_table.php
+  - create_paypal_payments_table.php
+  - create_pivots_table.php
+  - create_products_table.php
+  - create_shippings_table.php
+  - create_tax_rates_table.php
+  - create_tpv_payments_table.php
+  - seed_spain_states_table.php
+  - seed_all_table.php
+  - seed_order_statuses_table.php
+  - seed_portugal_states_table.php
+
+#1.0.3:
+#  - Update products table with discount price
+#  - update_products_table.php
+#1.0.4:
+#  - Update shop filters with value
+#  - update_filters_table.php
+#1.0.5:
+#  - Update currecy table with 3 ISO code
+#  - update_currecy_table.php
+#1.0.6:
+#  - Create stripe payment table
+#  - create_stripe_payments_table.php

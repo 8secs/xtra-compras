@@ -1,0 +1,40 @@
+
+<tr class="shop-row{{ item.rowid }}">
+    <td><span class="cart-number">{{ item.id }}</span></td>
+    <td><a href="{{ '/product'|page }}/{{ item.slug }}" class="cart-pro-image"><img src="{{ item.picture.getThumb(150,150) }}" alt="{{ item.name }}" /></a></td>
+    <td><a href="{{ '/product'|page }}/{{ item.slug }}" class="cart-pro-title">{{ item.name }}</a></td>
+    <td>
+        <div class="cart-pro-qunantuty">
+        {% if not page %}
+            <input id="qty-{{ item.rowid }}" name="qty-{{ item.rowid }}" type="number" value="{{ item.qty }}" class="form-control">
+        {% else %}
+            {{ item.qty }}
+        {% endif %}
+        </div>
+    </td>
+    <td>
+        <p class="cart-pro-price">
+            {{ __SELF__.shopCurrency.symbol_left }}{{ item.price }}{{ __SELF__.shopCurrency.symbol_right }}
+        </p>
+        {% if item.options.count > 0 %}
+        <p class="cart-pro-old">
+            <span class="title">{{ 'Antes:'|_ }}</span>
+            <span class="price">{{ __SELF__.shopCurrency.symbol_left }}{{ item.options.before }}{{ __SELF__.shopCurrency.symbol_right }}</span>
+        </p>
+        {% endif %}
+    </td>
+    <td><p class="cart-pro-total">{{ __SELF__.shopCurrency.symbol_left }}{{ item.subtotal }}{{ __SELF__.shopCurrency.symbol_right }}</p></td>
+    {% if not page %}
+    <td>
+        <button type="submit" class="cart-pro-remove"
+                data-request="{{ __SELF__ }}::onRemoveProduct"
+                data-request-data="row_id: '{{ item.rowid }}'"
+                data-request-update="'ShopBasket::nav-list-basket': '.nav-basket',
+                                'ShopBasket::default': '.cart-products',
+                                'ShopBasket::basket-responsive': '.cart-products',
+                                'ShopBasket::_order-summary': '.order-summary'">
+            <i class="fa fa-trash-o"></i>
+        </button>
+    </td>
+    {% endif %}
+</tr>

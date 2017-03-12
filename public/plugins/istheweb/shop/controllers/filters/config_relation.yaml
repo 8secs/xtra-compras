@@ -1,0 +1,18 @@
+filter_type:
+    label: istheweb.shop::lang.filter_type.label
+    view:
+        form: $/istheweb/shop/models/filtertype/fields.yaml
+        toolbarButtons: link|unlink
+    manage:
+        form: $/istheweb/shop/models/filtertype/fields.yaml
+        list: $/istheweb/shop/models/filtertype/columns.yaml
+products:
+    label: Products
+    view:
+        list: $/istheweb/shop/models/product/columns.yaml
+        toolbarButtons: add|remove
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/istheweb/shop/models/product/columns.yaml
+        form: $/istheweb/shop/models/product/fields.yaml

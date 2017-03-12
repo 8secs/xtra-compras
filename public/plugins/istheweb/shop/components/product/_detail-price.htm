@@ -1,0 +1,22 @@
+<div class="box">
+
+    <p class="price">{{ ShopBasket.shopCurrency.symbol_left }}{{ product.price }}{{ ShopBasket.shopCurrency.symbol_right }}</p>
+
+    <p class="text-center">
+        {% if product.inStock() %}
+    <form
+            data-request="ShopBasket::onAddProduct"
+            data-request-data="id: {{ product.id }}"
+            data-request-update="'ShopBasket::nav-list-basket': '.nav-basket', 'ShopBasket::_cart': '.cart'"
+            data-request-success="refreshCart();">
+        <input type="number" name="quantity" placeholder="Qty"
+               min="1" max="9999" value="1"
+               {% if product.outOfStock() %}disabled{% endif %}>
+        <button type="submit" class="btn btn-template-main"><i class="fa fa-shopping-cart"></i> {{ 'Añadir al carrito'|_ }}</button>
+    </form>
+    {% else %}
+    {{ 'Out of Stock'|_ }}
+    {% endif %}
+    </p>
+
+</div>

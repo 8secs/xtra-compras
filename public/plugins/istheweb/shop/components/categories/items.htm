@@ -1,0 +1,20 @@
+{% for category in categories %}
+{% set postCount = category.products.count %}
+{# category #}
+<li {% if category.slug == currentCategorySlug %}class="active"{% endif %}>
+    <a href="{{ category.url }}">{{ category.name }}
+        {# if postCount #}
+        <!--<span class="count">{# postCount #}</span>-->
+        {# endif #}
+        {# if category.children.count > 0 #}<!--<span class="fa fa-plus pull-right"></span>-->{# endif #}
+    </a>
+    {% if category.children.count > 0 %}
+    <ul>
+        {% partial __SELF__ ~ "::items"
+        categories=category.children
+        currentCategorySlug=currentCategorySlug
+        %}
+    </ul>
+    {% endif %}
+</li>
+{% endfor %}

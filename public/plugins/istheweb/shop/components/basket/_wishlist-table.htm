@@ -1,0 +1,46 @@
+<div class="wishlist-table">
+    <table class="table cart-table text-center">
+        <thead>
+        <tr>
+            <th class="number">#</th>
+            <th class="image">{{ 'Imagen'|_ }}</th>
+            <th class="name">{{ 'Nombre producto'|_ }}</th>
+            <th class="price">{{ 'Precio'|_ }}</th>
+            <th class="add-cart">{{ 'Añadir a carrito'|_ }}</th>
+            <th class="remove">{{ 'Eliminar'|_ }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        
+        {% for wishlist in wishlists %}
+        <tr>
+            <td><span class="cart-number">1</span></td>
+            <td><a href="{{ 'shop/product'|page({ slug: wishlist.slug }) }}" class="cart-pro-image"><img src="{{ wishlist.picture.getThumb(150,150) }}" alt="{{ wishlist.name }}"></a></td>
+            <td><a href="{{ 'shop/product'|page({ slug: wishlist.slug }) }}" class="cart-pro-title">{{ wishlist.name }}</a></td>
+            <td><p class="cart-pro-price">{{ __SELF__.shopCurrency.symbol_left }}{{ wishlist.price }}{{ __SELF__.shopCurrency.symbol_right }}</p></td>
+            <td>
+                <form
+                        data-request="ShopBasket::onAddProduct"
+                        data-request-data="id: {{ wishlist.id }}"
+                        data-request-update="'ShopBasket::nav-list-basket': '.nav-basket'">
+                    <button type="submit" class="add-cart-btn button small color-hover">{{ 'Añadir a carrito'|_ }}</button>
+                </form>
+            </td>
+
+            <td>
+                <form
+                        data-request="Customer::onRemoveProductFromWishtlist"
+                        data-request-update="'ShopBasket::_wishlist-table': '.wishlist-table'">
+                    <input type="hidden" name="rowid" value="{{ wishlist.rowid }}" />
+                    <button type="submit" class="cart-pro-remove"><i class="fa fa-trash-o"></i></button>
+                </form>
+            </td>
+        </tr>
+        {% else %}
+        <tr>
+            <td colspan="6" height="60">{{ 'No hay favoritos'|_ }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>    
+</div>

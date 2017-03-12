@@ -1,0 +1,23 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: istheweb.shop::lang.labels.name
+        type: partial
+        path: display_name
+        searchable: true
+    send_email:
+        label: istheweb.shop::lang.labels.email_customer
+
+    attach_invoice:
+        label: istheweb.shop::lang.labels.attach_invoice
+    email_template:
+        label: istheweb.shop::lang.labels.email_template
+    created_at:
+        label: istheweb.shop::lang.labels.created_at
+        type: date
+    updated_at:
+        label: istheweb.shop::lang.labels.updated_at
+        type: date

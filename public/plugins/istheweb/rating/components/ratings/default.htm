@@ -1,0 +1,48 @@
+<div class="rating-list">
+    {% if user %}
+    <form data-request="{{ __SELF__ }}::onRating"
+          data-request-update="'{{ __SELF__ }}::gracias': '#responseRank'">
+        <input type="hidden" name="modelId" id="modelId" value="{{__SELF__.model.id }}">
+        <input type="hidden" name="userId" id="userId" value="{{__SELF__.user.id }}">
+        <div class="star-box">
+            <label>Rating:</label>
+            <div class="sin-list fix">
+                <input id="rating-input" name="rate" type="number" class="rating" />
+            </div>
+        </div>
+        <div class="input-box-2 fix">
+            <div class="input-box float-left">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name" placeholder="Type your name" value="{{ user.name }}">
+            </div>
+            <div class="input-box float-left">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" placeholder="Type your email address" value="{{ user.email }}">
+            </div>
+        </div>
+        <div class="input-box review-box fix">
+            <label for="your-review">Your Review:</label>
+            <textarea name="review" id="your-review" placeholder="Write a review"></textarea>
+        </div>
+        <div class="input-box submit-box fix">
+            <input type="submit" value="add review">
+        </div>
+        <div id="responseRank"></div>
+    </form>
+    {% else %}
+    <p>Para poder hacer un comentario tienes que estar logueado.</p>
+    {% endif %}
+</div>
+
+{% put scripts %}
+<script type="text/javascript">
+    $('#rating-input').rating({
+        min: 0,
+        max: 5,
+        step: 0.5,
+        size: 'xs',
+        showCaption: false,
+        theme: 'krajee-fa'
+    });
+</script>
+{% endput %}

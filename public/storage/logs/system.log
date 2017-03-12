@@ -227,3 +227,46 @@ Stack trace:
 #46 /var/www/public/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php(87): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
 #47 /var/www/public/index.php(44): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
 #48 {main}  
+[2017-03-12 13:40:32] production.ERROR: exception 'InvalidArgumentException' with message 'Command "plugin:create" is not defined.
+
+Did you mean one of these?
+    plugin:remove
+    plugin:refresh
+    plugin:install' in /var/www/public/vendor/symfony/console/Application.php:517
+Stack trace:
+#0 /var/www/public/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->find('plugin:create')
+#1 /var/www/public/vendor/symfony/console/Application.php(119): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /var/www/public/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(107): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/public/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2017-03-12 18:33:06] production.ERROR: exception 'InvalidArgumentException' with message 'Command "plugin:create" is not defined.
+
+Did you mean one of these?
+    plugin:remove
+    plugin:refresh
+    plugin:install' in /var/www/public/vendor/symfony/console/Application.php:517
+Stack trace:
+#0 /var/www/public/vendor/symfony/console/Application.php(185): Symfony\Component\Console\Application->find('plugin:create')
+#1 /var/www/public/vendor/symfony/console/Application.php(119): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#2 /var/www/public/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(107): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#3 /var/www/public/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 {main}  
+[2017-03-12 18:58:45] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Interface 'istheweb\rating\contracts\Ratingable' not found' in /var/www/public/plugins/istheweb/shop/models/Product.php:15
+Stack trace:
+#0 {main}  
+[2017-03-12 18:59:47] production.ERROR: exception 'InvalidArgumentException' with message 'Plugin "Istheweb.Raiting" not found.' in /var/www/public/modules/system/console/PluginRefresh.php:42
+Stack trace:
+#0 [internal function]: System\Console\PluginRefresh->fire()
+#1 /var/www/public/vendor/laravel/framework/src/Illuminate/Container/Container.php(507): call_user_func_array(Array, Array)
+#2 /var/www/public/vendor/laravel/framework/src/Illuminate/Console/Command.php(150): Illuminate\Container\Container->call(Array)
+#3 /var/www/public/vendor/symfony/console/Command/Command.php(261): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#4 /var/www/public/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#5 /var/www/public/vendor/symfony/console/Application.php(843): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#6 /var/www/public/vendor/symfony/console/Application.php(188): Symfony\Component\Console\Application->doRunCommand(Object(System\Console\PluginRefresh), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#7 /var/www/public/vendor/symfony/console/Application.php(119): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#8 /var/www/public/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(107): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#9 /var/www/public/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#10 {main}  
+[2017-03-12 19:47:12] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Renatio\DynamicPDF\Models\Template' not found' in /var/www/public/plugins/istheweb/shop/models/Shop.php:80
+Stack trace:
+#0 {main}  

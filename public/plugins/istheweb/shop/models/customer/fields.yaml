@@ -1,0 +1,24 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: istheweb.shop::lang.labels.name
+        span: auto
+    surname:
+        label: istheweb.shop::lang.labels.last_name
+        span: auto
+    email:
+        label: istheweb.shop::lang.labels.email
+        span: auto
+    username:
+        label: istheweb.shop::lang.labels.username
+        span: auto
+    phone:
+        label: istheweb.shop::lang.labels.phone
+        span: auto
+    cif:
+        label: istheweb.shop::lang.labels.cif
+        span: auto
+

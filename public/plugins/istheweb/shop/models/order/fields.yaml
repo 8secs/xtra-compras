@@ -1,0 +1,75 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+
+    order_status:
+        #type: partial
+        #path: field_order_status
+        label: istheweb.shop::lang.order_status.label
+        type: relation
+        nameFrom: name
+        span: auto
+        tab: istheweb.shop::lang.labels.details
+    payment_method:
+        label: istheweb.shop::lang.labels.payment_method
+        type: dropdown
+        span: auto
+        tab: istheweb.shop::lang.labels.details
+    customer:
+        type: partial
+        path: field_customer
+        label: istheweb.shop::lang.labels.customer
+        tab: istheweb.shop::lang.labels.customer
+    shipping_address:
+        label: istheweb.shop::lang.labels.shipping_address
+        type: partial
+        path: field_shipping_address
+        span: auto
+        tab: istheweb.shop::lang.labels.customer
+    billing_address:
+        label: istheweb.shop::lang.labels.billing_address
+        type: partial
+        path: field_billing_address
+        span: auto
+        tab: istheweb.shop::lang.labels.customer
+    products:
+        type: partial
+        path: field_products
+        label: istheweb.shop::lang.products.menu_label
+        tab: istheweb.shop::lang.products.menu_label
+    tax:
+        label: istheweb.shop::lang.labels.taxes
+        span: auto
+        disabled: true
+        tab: istheweb.shop::lang.labels.prices
+    shipping:
+        label: istheweb.shop::lang.labels.shipping
+        span: auto
+        disabled: true
+        tab: istheweb.shop::lang.labels.prices
+    subtotal:
+        label: istheweb.shop::lang.labels.subtotal
+        span: auto
+        disabled: true
+        tab: istheweb.shop::lang.labels.prices
+    total:
+        label: istheweb.shop::lang.labels.total
+        span: auto
+        disabled: true
+        tab: istheweb.shop::lang.labels.prices
+        comment: precios antes de comisiones por método de pagos
+    tpv_payment:
+        label: istheweb.shop::lang.labels.tpv_payment
+        span: auto
+        type: partial
+        path: field_tpv_payment
+        tab: istheweb.shop::lang.labels.tpv_payment
+    paypal_payment:
+        label: istheweb.shop::lang.labels.paypal_payment
+        span: auto
+        type: partial
+        path: field_paypal_payment
+        tab: istheweb.shop::lang.labels.paypal_payment

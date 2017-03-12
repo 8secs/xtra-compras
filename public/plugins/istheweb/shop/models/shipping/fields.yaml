@@ -1,0 +1,25 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: istheweb.shop::lang.labels.name
+        required: true
+    cost:
+        label: istheweb.shop::lang.labels.cost
+        span: auto
+        comment: istheweb.shop::lang.labels.cost-message
+    total:
+        label: istheweb.shop::lang.labels.total
+        span: auto
+        comment: istheweb.shop::lang.labels.total-message
+    geo_zone:
+        label: istheweb.shop::lang.geo_zones.menu_label
+        type: recordfinder
+        list: ~/plugins/rainlab/location/models/country/columns.yaml
+        prompt: istheweb.shop::lang.geo_zones.record_finder
+        nameFrom: name
+        span: auto
+        tab: istheweb.shop::lang.geo_zones.menu_label
+

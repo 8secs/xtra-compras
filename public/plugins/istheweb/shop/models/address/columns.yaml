@@ -1,0 +1,19 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    address_1:
+        label: istheweb.shop::lang.labels.address_1
+        searchable: true
+    city:
+        label: istheweb.shop::lang.labels.city
+        searchable: true
+    country[name]:
+        label: istheweb.shop::lang.labels.country
+    postcode:
+        label: istheweb.shop::lang.labels.postalcode
+        searchable: true
+    updated_at:
+        label: istheweb.shop::lang.labels.updated_at
+        type: date

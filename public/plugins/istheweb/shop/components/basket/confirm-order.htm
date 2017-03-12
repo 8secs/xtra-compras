@@ -1,0 +1,43 @@
+<div class="table-responsive cart-products">
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="2">{{ 'Producto'|_ }}</th>
+            <th>{{ 'Cantidad'|_ }}</th>
+            <th>{{ 'Precio unidad'|_ }}</th>
+            <th>{{ 'Descuento'|_ }}</th>
+            <th colspan="2">{{ 'Subtotal'|_ }}</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% if __SELF__.basketCount > 0 %}
+        {% for item in __SELF__.basketItems %}
+        {% partial __SELF__~'::_item' item=item page='order' %}
+        {% endfor %}
+        <tr>
+            <td>{{ 'Subtotal del pedido'|_ }}</td>
+            <th colspan="5">{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.basketSubtotal|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</th>
+        </tr>
+        <tr>
+            <td>{{ 'Gastos de envío'|_ }}</td>
+            <th colspan="5">{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.selectedShippingRate|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</th>
+        </tr>
+        <tr>
+            <td>{{ 'Impuestos'|_ }}</td>
+            <th colspan="5">{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.basketTaxRate|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</th>
+        </tr>
+        <tr class="total">
+            <td>{{ 'Total'|_ }}</td>
+            <th colspan="5">{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.basketTotal|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</th>
+        </tr>
+        {% else %}
+        <td colspan="6">{{ 'No hay artículos en tu carrito.'|_ }} {{ __SELF__.basketItems }}</td>
+        {% endif %}
+        </tbody>
+    </table>
+</div>
+
+{{ form_ajax('onCheckout') }}
+<input type="hidden" name="email" value="{{ recipientEmail }}" />
+<button type="submit" class="btn btn-default">{{ 'Comprar ahora'|_ }}</button>
+{{ form_close() }}

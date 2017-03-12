@@ -1,0 +1,16 @@
+# ===================================
+#  Import/Export Behavior Config
+# ===================================
+
+import:
+    title: Import products
+    modelClass: Istheweb\Shop\Models\ProductImport
+    list: $/istheweb/shop/models/productimport/columns.yaml
+    form: $/istheweb/shop/models/productimport/fields.yaml
+    permissions: istheweb.shop.access_import_export
+
+export:
+    title: Export produts
+    modelClass: Istheweb\Shop\Models\ProductExport
+    list: $/istheweb/shop/models/productexport/columns.yaml
+    permissions: istheweb.shop.access_import_export

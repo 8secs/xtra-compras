@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Layout
+
+# Model Form Field configuration
+form: $/istheweb/ispdf/models/layout/fields.yaml
+
+# Model Class name
+modelClass: Istheweb\IsPdf\Models\Layout
+
+# Default redirect location
+defaultRedirect: istheweb/ispdf/layouts
+
+# Create page
+create:
+    title: Create Layout
+    redirect: istheweb/ispdf/layouts/update/:id
+    redirectClose: istheweb/ispdf/layouts
+
+# Update page
+update:
+    title: Edit Layout
+    redirect: istheweb/ispdf/layouts
+    redirectClose: istheweb/ispdf/layouts
+
+# Preview page
+preview:
+    title: Preview Layout

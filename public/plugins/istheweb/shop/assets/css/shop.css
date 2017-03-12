@@ -1,0 +1,15 @@
+.padding-5{
+    padding: 5px;
+    color: #FFF;
+}
+.cancel-order {
+    background-color: #c0392b;
+}
+
+.new-order {
+    background-color: #f1c40f;
+}
+
+.payment-received {
+    background-color: #27ae60;
+}

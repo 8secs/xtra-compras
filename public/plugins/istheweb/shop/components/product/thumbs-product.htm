@@ -1,0 +1,26 @@
+{% set thumbs = product.pictures %}
+
+{% for thumb in thumbs %}
+    {% if theme == 'dxbwatch' %}
+        <div class="owl-item">
+            <a href="#" id="{{ thumb.getPath() }}" class="thumb">
+                <img src="{{ thumb.getPath() }}" alt="" width="75">
+            </a>
+        </div>
+    {% elseif theme == 'basic' %}
+        {% if loop.first %}
+            <li class="nav-item"><a class="nav-link active" href="#{{ thumb.getPath() }}" aria-controls="{{ product.name }}" role="tab" data-toggle="tab"><img alt="" src="{{ thumb.getPath() }}"></a></li>
+        {% else %}
+            <li class="nav-item"><a class="nav-link" href="#{{ thumb.getPath() }}" aria-controls="{{ product.name }}" role="tab" data-toggle="tab"><img alt="" src="{{ thumb.getPath() }}"></a></li>
+        {% endif %}
+    {% elseif theme == 'platform' %}
+        <a {% if loop.first %}class="active"{% endif %}
+           href="#{{ thumb.getPath() }}"
+           data-image="{{ thumb.getPath() }}"
+           data-zoom-image="{{ thumb.getPath() }}">
+            <img src="{{ thumb.getPath() }}" alt="{{ product.name }}">
+        </a>
+    {% endif %}
+{% endfor %}
+
+

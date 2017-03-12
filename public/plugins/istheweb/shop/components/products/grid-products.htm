@@ -1,0 +1,14 @@
+<div class="grid-view">
+    {% for params in products %}
+    <div class="col-lg-4 col-md-4 col-sm-4">
+        {% partial __SELF__ ~ '::_single-product' params=params type=type %}
+    </div>
+
+    {% else %}
+    <div class="col-md-4 col-sm-6">
+        <div class="product">
+            <h3>{{ noProductsMessage }}</h3>
+        </div>
+    </div>
+    {% endfor %}
+</div>

@@ -1,0 +1,36 @@
+<?php
+$color;
+
+switch($record->order_status){
+    case 'Nuevo Pedido - Reembolso':
+        $color = "#3498db";
+        break;
+    case 'Nuevo Pedido - Paypal':
+        $color = "#f1c40f";
+        break;
+    case 'Nuevo Pedido - Administración':
+        $color = "#34495e";
+        break;
+    case 'Nuevo Pedido - Tpv':
+        $color = "#f39c12";
+        break;
+    case 'Nuevo Pedido - Stripe':
+        $color = "#2ecc71";
+        break;
+    case 'Pago Cancelado':
+        $color = "#c0392b";
+        break;
+    case 'Pago Recibido':
+        $color = "#8e44ad";
+        break;
+    case 'Pedido Enviado':
+        $color = "#27ae60";
+        break;
+    case 'Pedido Entregado':
+        $color = "#7f8c8d";
+        break;
+}
+
+?>
+
+<span class="padding-5" style="background-color: <?=$color;?>"><?=$record->order_status ?></span>

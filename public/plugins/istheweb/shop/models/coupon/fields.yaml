@@ -1,0 +1,67 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: istheweb.shop::lang.labels.name
+        span: auto
+        required: true
+    code:
+        label: istheweb.shop::lang.labels.code
+        span: right
+        required: true
+    type:
+        label: istheweb.shop::lang.labels.type
+        span: auto
+        required: true
+        type: dropdown
+        options:
+            P: istheweb.shop::lang.labels.percentage
+            F: istheweb.shop::lang.labels.fix
+    discount:
+        label: istheweb.shop::lang.labels.disccount
+        span: right
+    date_start:
+        label: istheweb.shop::lang.labels.date_start
+        type: datepicker
+        mode: date
+        span: auto
+    date_end:
+        label: istheweb.shop::lang.labels.date_end
+        type: datepicker
+        mode: date
+        span: auto
+    shipping:
+        label: istheweb.shop::lang.labels.free_shipping
+        type: radio
+        span: auto
+        options:
+            1: istheweb.shop::lang.labels.yes
+            0: istheweb.shop::lang.labels.no
+    uses_total:
+        label: istheweb.shop::lang.labels.uses_per_coupon
+        type: number
+        span: auto
+    uses_customer:
+        label: istheweb.shop::lang.labels.uses_per_customer
+        type: number
+        span: auto
+    published_at:
+        label: istheweb.shop::lang.labels.published_at
+        type: datepicker
+        mode: date
+        span: auto
+
+tabs:
+    fields:
+        products:
+            label: istheweb.shop::lang.products.menu_label
+            type: partial
+            path: field_products
+            tab: istheweb.shop::lang.products.menu_label
+        categories:
+            label: istheweb.shop::lang.categories.menu_label
+            type: partial
+            path: field_categories
+            tab: istheweb.shop::lang.categories.menu_label

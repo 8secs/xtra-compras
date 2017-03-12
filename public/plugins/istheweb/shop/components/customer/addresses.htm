@@ -1,0 +1,40 @@
+{% set addresses = __SELF__.user.customer.addresses %}
+{% set addressType = __SELF__.addressType ?: type %}
+<div class="margin-tb-10">
+    <form id="addresses_form_{{ addressType }}" data-request="onAddressChange" data-request-update="'Customer::address': '#location_{{ addressType }}'">
+        <input type="hidden" id="type" name="type" value="{{ addressType }}" />
+        <label for="addresses_{{ addressType }}">Tus direcciones</label>
+        <select id="addresses_{{ addressType }}" class="form-control" name="addresses_{{ addressType }}" onchange="onAddressChange('{{ addressType }}')">
+            {% if addresses.count > 0 %}
+            <option value="0">{{ 'Selecciona tu dirección'|_ }}</option>
+            {% for address in addresses %}
+            <option value="{{ address.id }}">{{ address.address_1 ~ ", " ~ address.city ~ " - " ~ address.state.name }}</option>
+            {% endfor %}
+            {% else %}
+            <option value="0">{{ 'No addresses'|_ }}</option>
+            {% endif %}
+        </select>
+    </form>
+
+</div>
+
+{% put scripts %}
+<script type="text/javascript">
+    function onAddressChange(type){
+        if($('#addresses_'+type).val() != 0){
+            $('#addresses_form_'+type).submit();
+        }else {
+            resetForm(type);
+        }
+    }
+
+    function resetForm(type){
+        $('#address_1_'+type).val('');
+        $('#address_2_'+type).val('');
+        $('#city_'+type).val('');
+        $('#postcode_'+type).val('');
+        $('#countries_'+type).val(0);
+        $('#states_'+type).val(0);
+    }
+</script>
+{% endput %}

@@ -1,0 +1,27 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: istheweb.shop::lang.labels.name
+        span: auto
+    color:
+        label: istheweb.shop::lang.labels.color
+        type: colorpicker
+        span: auto
+    state:
+        label: istheweb.shop::lang.labels.estado
+        type: text
+        span: auto
+    send_email:
+        label: istheweb.shop::lang.labels.email_customer
+        type: switch
+        comment: istheweb.shop::lang.labels.email_customer_comment
+    attach_invoice:
+        label: istheweb.shop::lang.labels.attach_invoice
+        type: switch
+        comment: istheweb.shop::lang.labels.attach_invoice_comment
+    email_template:
+        label: istheweb.shop::lang.labels.email_template
+        type: dropdown

@@ -1,0 +1,37 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+  fields:
+      name:
+          label: istheweb.shop::lang.labels.name
+          span: auto
+      value:
+          label: istheweb.shop::lang.labels.value
+          span: auto
+      published_at:
+          label: istheweb.shop::lang.labels.published_at
+          type: datepicker
+          mode: date
+          span: auto
+
+  tabs:
+      fields:
+          description:
+              type: richeditor
+              size: huge
+              label: istheweb.shop::lang.labels.description
+              span: auto
+              tab: istheweb.shop::lang.labels.description
+          filter_type:
+              label: istheweb.shop::lang.feature_types.menu_label
+              type: partial
+              path: field_filter_type
+              span: auto
+              tab: istheweb.shop::lang.feature_types.menu_label
+          products:
+              label: istheweb.shop::lang.products.menu_label
+              type: partial
+              path: field_products
+              span: auto
+              tab: istheweb.shop::lang.products.menu_label

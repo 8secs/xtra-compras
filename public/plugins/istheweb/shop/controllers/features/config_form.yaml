@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: istheweb.shop::lang.feature.label
+
+# Model Form Field configuration
+form: $/istheweb/shop/models/feature/fields.yaml
+
+# Model Class name
+modelClass: Istheweb\Shop\Models\Feature
+
+# Default redirect location
+defaultRedirect: istheweb/shop/features
+
+# Create page
+create:
+    title: istheweb.shop::lang.feature.create_title
+    redirect: istheweb/shop/features/update/:id
+    redirectClose: istheweb/shop/features
+
+# Update page
+update:
+    title: istheweb.shop::lang.feature.update_title
+    redirect: istheweb/shop/features
+    redirectClose: istheweb/shop/features
+
+# Preview page
+preview:
+    title: istheweb.shop::lang.feature.preview_title

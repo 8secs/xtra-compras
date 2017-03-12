@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Product
+
+# Model Form Field configuration
+form: $/istheweb/shop/models/product/fields.yaml
+
+# Model Class name
+modelClass: Istheweb\Shop\Models\Product
+
+# Default redirect location
+defaultRedirect: istheweb/shop/products
+
+# Create page
+create:
+    title: istheweb.shop::lang.product.create_title
+    redirect: istheweb/shop/products/update/:id
+    redirectClose: istheweb/shop/products
+
+# Update page
+update:
+    title: istheweb.shop::lang.product.update_title
+    redirect: istheweb/shop/products
+    redirectClose: istheweb/shop/products
+
+# Preview page
+preview:
+    title: istheweb.shop::lang.product.create_title

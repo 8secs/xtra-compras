@@ -1,0 +1,125 @@
+<style type="text/css">
+    body,
+    html,
+    .body {
+        background: #f3f3f3 !important;
+    }
+    .header {
+        background: #8a8a8a;
+    }
+    .header .columns {
+        padding-bottom: 0;
+    }
+    .header p {
+        color: #fff;
+        padding-top: 15px;
+    }
+    .header .wrapper-inner {
+        padding: 20px;
+    }
+    .header .container {
+        background: transparent;
+    }
+    table.button.facebook table td {
+        background: #3B5998 !important;
+        border-color: #3B5998;
+    }
+    table.button.twitter table td {
+        background: #1daced !important;
+        border-color: #1daced;
+    }
+    table.button.google table td {
+        background: #DB4A39 !important;
+        border-color: #DB4A39;
+    }
+    .wrapper.secondary {
+        background: #f3f3f3;
+    }
+</style>
+
+<container>
+
+    <spacer size="16"></spacer>
+
+    <row>
+        <columns>
+            <h1>Gracias por su pedido desde {{ site }}. Pedido Nº {{ pdfNumber }} </h1>
+            <p>Estimado {{ name }}. <br>
+                Su pedido con fecha {{ 'now'|date('d-m-Y') }} ha sido procesado en nuestro centro de distribución.
+            </p>
+
+
+            <spacer size="16"></spacer>
+
+            <callout class="secondary">
+                <row>
+                    <columns large="6">
+                        <p>
+                            <strong>Su dirección de correo electrónico:</strong><br>{{ email }}
+                        </p>
+                        <p>
+                            <strong>Su Número de factura:</strong><br>{{ pdfNumber }}
+                        </p>
+                    </columns>
+                    <columns large="6">
+                        <p>
+                            <strong>Dirección de la factura:</strong><br/>
+                            {{ billingAddress|raw }}
+                        </p>
+                        <p>
+                            <strong>Dirección de entrega:</strong><br/>
+                            {{ shippingAddress|raw }}
+                        </p>
+                    </columns>
+                </row>
+            </callout>
+
+            <h4>Detalle del pedido</h4>
+
+
+
+            <table width="500px">
+                <tr style="text-align: left;"><th>Contenido</th><th>Cantidad</th><th>Precio</th></tr>
+
+                {% for item in items %}
+                <tr><td>{{ item.name }}</td><td>{{ item.qty }}</td><td>{{ item.price }}€</td></tr>
+                {% endfor %}
+
+                <tr>
+                    <td colspan="2"><b>Subtotal:</b></td>
+                    <td>{{ subtotal }}€</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>IVA:</b></td>
+                    <td>{{ iva }}€</td>
+                </tr>
+                {% if shipping_rate > 0 %}
+                <tr>
+                    <td colspan="2"><b>Gastos de envío:</b></td>
+                    <td>{{ shipping_rate }}€</td>
+                </tr>
+                {% endif %}
+                <tr>
+                    <td colspan="2"><b>Comisión método pago:</b></td>
+                    <td>{{ fee }}€</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><b>Total:</b></td>
+                    <td>{{ total }}€</td>
+                </tr>
+            </table>
+
+            <hr/>
+
+            <h4>Recuerde:</h4>
+
+            <p>Si su pedido no es correcto comuníquenoslo a la siguiente dirección de email: <a href="mailto:info@dxbwatch.es">info@dxbwatch.es</a></p>
+
+        </columns>
+    </row>
+    <row class="footer text-center">
+        <columns large="3">
+            <img src="https://dxbwatch.es/storage/app/media/logo.png" alt="Dxbwatch">
+        </columns>
+    </row>
+</container>

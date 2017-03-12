@@ -1,0 +1,50 @@
+{% for params in products %}
+<div class="grid-item">
+
+    <div class="col-xs-12 col-sm-6">
+        <img class="img-fluid" src="{{ params.picture.getPath() }}" alt="{{ params.name }}">
+    </div>
+
+    <div class="col-xs-12 col-sm-6">
+        <div class="info">
+            <p class="name"><a href="{{ 'product'|page({ slug: params.slug }) }}">{{ params.name }}</a></p>
+            <span class="price">{{ ShopBasket.shopCurrency.symbol_left }}{{ params.price }}{{ ShopBasket.shopCurrency.symbol_right }}</span>
+            <div class="cart-icons">
+                <form id="shoppingForm_{{ params.id }}" data-request="ShopBasket::onAddProduct"
+                      data-request-data="id: {{ params.id }}"
+                      data-request-update="'ShopBasket::nav-list-basket': '.nav-basket'">
+                    {% if params.inStock() %}
+                    <a href="#" class="shopping-submit" id="{{ params.id }}">
+                        <div class="cart-icons">
+                            <strong><span class="fa fa-shopping-cart"></span></strong>
+                            <span class="cart-icon-handle"></span>
+                            <span class="add-to-cart-text">{{ 'Añadir al carrito'|_ }}</span>
+                        </div>
+                    </a>
+                    {% else %}
+                    {{ 'Out of Stock'|_ }}
+                    {% endif %}
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% else %}
+<div class="col-md-4 col-sm-6">
+    <div class="product">
+        <h3>{{ noProductsMessage }}</h3>
+    </div>
+</div>
+{% endfor %}
+
+{% put scripts %}
+<script type="text/javascript">
+    $('.shopping-submit').on('click', function(e){
+        $('#shoppingForm_'+this.id).submit();
+        e.preventDefault();
+    });
+</script>
+{% endput %}

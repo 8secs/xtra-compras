@@ -1,0 +1,75 @@
+{% set addressType = __SELF__.addressType ?: addressType %}
+{% if addressType == 'billing' %}
+    {% set address = __SELF__.billingAddress ?: address %}
+{% else %}
+    {% set address = __SELF__.deliveryAddress ?: address %}
+{% endif %}
+
+<input type="hidden" id="type" name="type" value="{{ addressType }}" />
+<input type="hidden" id="id" name="id" value="{{ address.id }}" />
+<input type="hidden" id="id_{{ addressType }}" name="id_{{ addressType }}" value="{{ address.id }}" />
+<div class="form-group">
+    <label for="address_1_{{ addressType }}">{{ 'Dirección 1'|_ }}</label>
+    <input name="address_1_{{ addressType }}"
+           type="text" class="form-control"
+           id="address_1_{{ addressType }}"
+           placeholder="{{ 'Enter your address'|_ }}"
+           value="{{ address.address_1 }}"
+           required>
+</div>
+
+
+<div class="form-group">
+    <label for="address_2_{{ addressType }}">{{ 'Dirección 2'|_ }}</label>
+    <input name="address_2_{{ addressType }}"
+           type="text"
+           class="form-control"
+           id="address_2_{{ addressType }}"
+           placeholder="{{ 'Enter your address 2'|_ }}"
+           value="{{ address.address_2 }}">
+</div>
+
+<div class="form-group">
+    <label for="city_{{ addressType }}">{{ 'Población'|_ }}</label>
+    <input name="city_{{ addressType }}"
+           type="text"
+           class="form-control"
+           id="city_{{ addressType }}"
+           placeholder="{{ 'Enter your city'|_ }}"
+           value="{{ address.city }}"
+           required>
+</div>
+
+<div class="form-group">
+    <label for="postcode_{{ addressType }}">{{ 'Código postal'|_ }}</label>
+    <input name="postcode_{{ addressType }}"
+           type="text"
+           class="form-control"
+           id="postcode_{{ addressType }}"
+           placeholder="{{ 'Enter your post code'|_ }}"
+           value="{{ address.postcode }}"
+           required>
+</div>
+
+<div class="form-group">
+    {% set countries = __SELF__.countries %}
+    {% partial __SELF__ ~ '::_countries' countries = countries type = addressType address = address %}
+</div>
+
+<div class="form-group">
+    <div id="states_div_{{ addressType }}">
+        {% partial __SELF__ ~ '::_states' type = addressType  address = address %}
+    </div>
+</div>
+
+{% if addressType == 'billing' %}
+<div class="form-group">
+    <input type="checkbox" id="not-same-address" name="not-same-address" {% if __SELF__.notSameAddress == 1 %} checked {% endif %} />
+    <label for="not-same-address"><small>{{ 'Dirección de facturación y envío no son iguales.'|_ }}</small></label>
+</div>
+{% endif %}
+
+{% if __SELF__.shopCheckoutSteps != 2 %}
+<button type="submit" class="button color-hover">{% if checkout %} Siguiente {% else %}{{ 'Guardar'|_ }}{% endif %}</button>
+{% endif %}
+

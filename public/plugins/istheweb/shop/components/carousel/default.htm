@@ -1,0 +1,24 @@
+<ul class="bxslider">
+{% for image in images %}
+    <li><img class="img-fluid" src="{{ image }}" /></li>
+{% endfor %}
+</ul>
+
+{% put scripts %}
+<script type="text/javascript">
+    var slideWidth, minSlides, maxSlides, slideMargin;
+    $(document).ready(function(){
+        slideWidth = '{{ slideWidth }}';
+        minSlides = '{{ minSlides }}';
+        maxSlides = '{{ maxSlides }}';
+        slideMargin = '{{ slideMargin }}';
+        $('.bxslider').bxSlider({
+            controls: false,
+            slideWidth: parseInt(slideWidth),
+            minSlides: parseInt(minSlides),
+            maxSlides: parseInt(maxSlides),
+            slideMargin: parseInt(slideMargin)
+        });
+    });
+</script>
+{% endput %}

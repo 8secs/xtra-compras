@@ -1,0 +1,20 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: istheweb.shop::lang.labels.name
+        searchable: true
+    surname:
+        label: istheweb.shop::lang.labels.last_name
+        searchable: true
+    email:
+        label: istheweb.shop::lang.labels.email
+        searchable: true
+    username:
+        label: istheweb.shop::lang.labels.username
+        searchable: true
+    updated_at:
+        label: istheweb.shop::lang.labels.updated_at
+        type: date

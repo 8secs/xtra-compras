@@ -1,0 +1,101 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: istheweb.shop::lang.labels.name
+        span: auto
+        type: text
+    slug:
+        label: istheweb.shop::lang.labels.slug
+        span: right
+        required: true
+        preset:
+            field: name
+            type: slug
+    published_at:
+        label: istheweb.shop::lang.labels.published_at
+        type: datepicker
+        mode: date
+        span: auto
+
+tabs:
+  fields:
+    description:
+        type: richeditor
+        size: huge
+        label: istheweb.shop::lang.labels.description
+        span: auto
+        tab: istheweb.shop::lang.labels.description
+    picture:
+        label: istheweb.shop::lang.labels.picture
+        type: fileupload
+        mode: image
+        span: auto
+        imageHeight: 260
+        imageWidth: 260
+        tab: istheweb.shop::lang.labels.description
+    modelo:
+        label: Model
+        span: left
+        tab: istheweb.shop::lang.labels.description
+    is_stockable:
+        label: istheweb.shop::lang.labels.stockable
+        type: switch
+        span: right
+        tab: istheweb.shop::lang.labels.description
+    is_featured:
+        label: istheweb.shop::lang.labels.featured
+        type: switch
+        span: right
+        tab: istheweb.shop::lang.labels.description
+    stock:
+        label: istheweb.shop::lang.labels.quantity
+        type: number
+        span: left
+        tab: istheweb.shop::lang.labels.description
+    on_sale:
+        label: istheweb.shop::lang.labels.sale
+        type: switch
+        span: right
+        tab: istheweb.shop::lang.labels.description
+    price:
+        label: istheweb.shop::lang.labels.price
+        type: number
+        span: left
+        cssClass: padded
+        tab: istheweb.shop::lang.labels.description
+    discount:
+        label: istheweb.shop::lang.labels.discount_price
+        type: number
+        span: right
+        cssClass: padded
+        tab: istheweb.shop::lang.labels.description
+        trigger:
+              action: show
+              field: on_sale
+              condition: checked
+    categories:
+        label: istheweb.shop::lang.categories.menu_label
+        type: partial
+        path: field_categories
+        tab: istheweb.shop::lang.categories.menu_label
+    features:
+        label: istheweb.shop::lang.features.menu_label
+        type: partial
+        path: field_features
+        tab: istheweb.shop::lang.features.menu_label
+    filters:
+        label: istheweb.shop::lang.filters.menu_label
+        type: partial
+        path: field_filters
+        tab: istheweb.shop::lang.filters.menu_label
+    pictures:
+        label: istheweb.shop::lang.labels.pictures
+        type: fileupload
+        mode: image
+        span: auto
+        imageHeight: 260
+        imageWidth: 260
+        tab: istheweb.shop::lang.labels.attachments

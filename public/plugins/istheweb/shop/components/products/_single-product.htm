@@ -1,0 +1,84 @@
+{% if type == 'grid' %}
+<!-- grid layout -->
+<div class="single-product">
+    {% if params.on_sale %}
+    <span class="sale-text">Sale</span>
+    {% endif %}
+    <div class="product-img">
+        {% partial __SELF__ ~ '::_thumb' params=params %}
+        <div class="actions">
+            {% partial __SELF__ ~ '::_actions' params=params %}
+        </div>
+    </div>
+    <div class="product-content">
+        <h2 class="product-name"><a href="{{ 'shop/product'|page({ slug: params.slug }) }}">{{ params.name }}</a></h2>
+        <div class="pro-rating">
+            {% partial __SELF__ ~ '::_rating' params=params %}
+        </div>
+        <div class="price-box">
+            {% if params.on_sale %}
+            <span class="new-price">{{ ShopBasket.shopCurrency.symbol_left }}{{ params.discount }}{{ ShopBasket.shopCurrency.symbol_right }}</span>
+            <span class="old-price">{{ ShopBasket.shopCurrency.symbol_left }}{{ params.price }}{{ ShopBasket.shopCurrency.symbol_right }}</span>
+            {% else %}
+            <span class="new-price">{{ ShopBasket.shopCurrency.symbol_left }}{{ params.price }}{{ ShopBasket.shopCurrency.symbol_right }}</span>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% elseif type== 'list' %}
+<!-- list layout -->
+<div class="single-product">
+    <div class="col-md-4 col-sm-4 col-xs-12">
+
+        <div class="product-img">
+            {% partial __SELF__ ~ '::_thumb' params=params %}
+            {% if params.on_sale %}
+            <span class="sale-text">Sale</span>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="col-md-8 col-sm-8 col-xs-12">
+        <div class="product-content">
+            <h2 class="product-name"><a href="{{ 'shop/product'|page({ slug: params.slug }) }}">{{ params.name }}</a></h2>
+            <div class="pro-rating">
+                {% partial __SELF__ ~ '::_rating' params=params %}
+            </div>
+            <div class="price-box">
+                {% if params.on_sale %}
+                    <span class="new-price">{{ ShopBasket.shopCurrency.symbol_left }}{{ params.discount }}{{ ShopBasket.shopCurrency.symbol_right }}</span>
+                    <span class="old-price">{{ ShopBasket.shopCurrency.symbol_left }}{{ params.price }}{{ ShopBasket.shopCurrency.symbol_right }}</span>
+                {% else %}
+                    <span class="new-price">{{ ShopBasket.shopCurrency.symbol_left }}{{ params.price }}{{ ShopBasket.shopCurrency.symbol_right }}</span>
+                {% endif %}
+            </div>
+            <div class="product-desc">
+                <p>{{ params.description|raw }}</p>
+            </div>
+            <div class="actions">
+                {% partial __SELF__ ~ '::_actions' params=params %}
+            </div>
+        </div>
+    </div>
+
+</div>
+{% else %}
+<div class="single-product">
+    <div class="product-img">
+        {% partial __SELF__ ~ '::_thumb' params=params %}
+    </div>
+    <div class="product-content">
+        <div class="pro-info">
+            <h2 class="product-name"><a href="{{ 'shop/product'|page({ slug: params.slug }) }}">{{ params.name }}</a></h2>
+            <div class="price-box">
+                {% if params.on_sale %}
+                <span class="new-price">{{ ShopBasket.shopCurrency.symbol_left }}{{ params.discount }}{{ ShopBasket.shopCurrency.symbol_right }}</span>
+                <span class="old-price">{{ ShopBasket.shopCurrency.symbol_left }}{{ params.price }}{{ ShopBasket.shopCurrency.symbol_right }}</span>
+                {% else %}
+                <span class="new-price">{{ ShopBasket.shopCurrency.symbol_left }}{{ params.price }}{{ ShopBasket.shopCurrency.symbol_right }}</span>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}

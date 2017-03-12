@@ -1,0 +1,20 @@
+<form id="form_tpv" name="form_tpv" action="https://sis.redsys.es/sis/realizarPago" method="post">
+    <input type="hidden" name="Ds_SignatureVersion" id="Ds_SignatureVersion" value="">
+    <input type="hidden" name="Ds_MerchantParameters" id="Ds_MerchantParameters" value="">
+    <input type="hidden" name="Ds_Signature" id="Ds_Signature"  value=''>
+</form>
+
+{% put scripts %}
+<script type="text/javascript">
+    function checkoutSuccess(data){
+
+        if(typeof data === 'object' && data.isTpv == 1){
+            $('#Ds_SignatureVersion').val(data.version);
+            $('#Ds_MerchantParameters').val(data.params);
+            $('#Ds_Signature').val(data.signature);
+            $('#form_tpv').submit();
+        }
+        $('.preloader').fadeOut('slow');
+    }
+</script>
+{% endput %}

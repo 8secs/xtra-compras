@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Template
+
+# Model Form Field configuration
+form: $/istheweb/ispdf/models/template/fields.yaml
+
+# Model Class name
+modelClass: Istheweb\IsPdf\Models\Template
+
+# Default redirect location
+defaultRedirect: istheweb/ispdf/templates
+
+# Create page
+create:
+    title: Create Template
+    redirect: istheweb/ispdf/templates/update/:id
+    redirectClose: istheweb/ispdf/templates
+
+# Update page
+update:
+    title: Edit Template
+    redirect: istheweb/ispdf/templates
+    redirectClose: istheweb/ispdf/templates
+
+# Preview page
+preview:
+    title: Preview Template

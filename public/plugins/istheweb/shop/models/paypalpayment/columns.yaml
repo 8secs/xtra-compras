@@ -1,0 +1,11 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    paypal_id:
+        label: istheweb.shop::lang.labels.paypal_payment_id
+        searchable: true
+    paypal_state:
+        label: istheweb.shop::lang.labels.estado
+        searchable: true

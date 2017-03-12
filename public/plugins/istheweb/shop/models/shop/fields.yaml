@@ -1,0 +1,254 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: istheweb.shop::lang.labels.name
+        span: auto
+    owner:
+        label: istheweb.shop::lang.labels.owner
+        span: auto
+
+tabs:
+  fields:
+      email:
+          label: istheweb.shop::lang.labels.email
+          span: auto
+          tab: istheweb.shop::lang.labels.content
+      phone:
+          type: text
+          span: auto
+          label: istheweb.shop::lang.labels.phone
+          tab: istheweb.shop::lang.labels.content
+      opening-times:
+          type: richeditor
+          span: auto
+          label: istheweb.shop::lang.labels.opening-times
+          tab: istheweb.shop::lang.labels.content
+      comments:
+          type: richeditor
+          span: auto
+          label: istheweb.shop::lang.labels.comments
+          tab: istheweb.shop::lang.labels.content
+      default_customer_pass:
+          span: auto
+          label: istheweb.shop::lang.labels.default_customer_pass
+          tab: istheweb.shop::lang.labels.content
+      invoiceTemplates:
+          span: auto
+          type: dropdown
+          label: istheweb.shop::lang.labels.invoice_templates
+          tab: istheweb.shop::lang.labels.content
+      checkoutSteps:
+          type: dropdown
+          span: auto
+          label: istheweb.shop::lang.labels.checkout_steps
+          tab: istheweb.shop::lang.labels.content
+      logo:
+          type: fileupload
+          mode: image
+          span: auto
+          imageWidth: 200
+          imageHeight: 200
+          label: istheweb.shop::lang.labels.logo
+          tab: istheweb.shop::lang.labels.content
+      address:
+          label: istheweb.shop::lang.labels.address
+          span: auto
+          tab: istheweb.shop::lang.labels.address
+      state-address:
+          label: istheweb.shop::lang.labels.state
+          span: auto
+          tab: istheweb.shop::lang.labels.address
+      city:
+          label: istheweb.shop::lang.labels.city
+          span: auto
+          tab: istheweb.shop::lang.labels.address
+      country-address:
+          label: istheweb.shop::lang.labels.country
+          span: auto
+          tab: istheweb.shop::lang.labels.address
+      cp:
+          label: istheweb.shop::lang.labels.postalcode
+          span: auto
+          tab: istheweb.shop::lang.labels.address
+      facebook:
+          type: text
+          label: istheweb.shop::lang.shop.facebook
+          tab: istheweb.shop::lang.shop.social
+      googleplus:
+          type: text
+          label: istheweb.shop::lang.shop.googleplus
+          tab: istheweb.shop::lang.shop.social
+      twitter:
+          type: text
+          label: istheweb.shop::lang.shop.twitter
+          tab: istheweb.shop::lang.shop.social
+      country:
+          type: dropdown
+          span: auto
+          label: istheweb.shop::lang.labels.country
+          tab: istheweb.shop::lang.labels.local
+      state:
+          type: dropdown
+          span: auto
+          dependsOn: country
+          label: istheweb.shop::lang.labels.state
+          tab: istheweb.shop::lang.labels.local
+      locale:
+          type: dropdown
+          span: auto
+          label: istheweb.shop::lang.labels.locale
+          tab: istheweb.shop::lang.labels.local
+      currency:
+          type: dropdown
+          span: auto
+          label: istheweb.shop::lang.currency.label
+          tab: istheweb.shop::lang.labels.local
+      length:
+          type: dropdown
+          span: auto
+          label: istheweb.shop::lang.labels.length
+          tab: istheweb.shop::lang.labels.local
+      weight:
+          type: dropdown
+          span: auto
+          label: istheweb.shop::lang.labels.weight
+          tab: istheweb.shop::lang.labels.local
+      tax:
+          type: dropdown
+          label: istheweb.shop::lang.labels.taxes
+          tab: istheweb.shop::lang.labels.taxes
+      cash:
+          type: switch
+          label: istheweb.shop::lang.labels.cash_delivery_sys
+          tab: istheweb.shop::lang.labels.payment_method
+          cssClass: 'col-3'
+      cash_fee:
+          type: text
+          span: auto
+          label: istheweb.shop::lang.labels.cash_payment_method_fee
+          tab: istheweb.shop::lang.labels.payment_method
+      paypal:
+          type: switch
+          label: istheweb.shop::lang.labels.paypal_sys
+          tab: istheweb.shop::lang.labels.payment_method
+          cssClass: 'col-3'
+      paypal_client_id:
+          span: auto
+          label: istheweb.shop::lang.labels.paypal_client_id
+          tab: istheweb.shop::lang.labels.payment_method
+          trigger:
+              action: show
+              field: paypal
+              condition: checked
+      paypal_secret_id:
+          span: auto
+          label: istheweb.shop::lang.labels.paypal_secret_id
+          tab: istheweb.shop::lang.labels.payment_method
+          trigger:
+              action: show
+              field: paypal
+              condition: checked
+      paypal_url_ok:
+          span: auto
+          label:  istheweb.shop::lang.labels.paypal_url_ok
+          tab: istheweb.shop::lang.labels.payment_method
+          trigger:
+              action: show
+              field: paypal
+              condition: checked
+      paypal_url_ko:
+          span: auto
+          label:  istheweb.shop::lang.labels.paypal_url_ko
+          tab: istheweb.shop::lang.labels.payment_method
+          trigger:
+              action: show
+              field: paypal
+              condition: checked
+      paypal_fee:
+          type: text
+          span: auto
+          label: istheweb.shop::lang.labels.paypal_payment_method_fee
+          tab: istheweb.shop::lang.labels.payment_method
+      tpv:
+          type: switch
+          label: istheweb.shop::lang.labels.tarjeta_sys
+          tab: istheweb.shop::lang.labels.payment_method
+          cssClass: 'col-3'
+      tpv_fuc:
+          span: auto
+          label:  istheweb.shop::lang.labels.fuc
+          tab: istheweb.shop::lang.labels.payment_method
+          trigger:
+              action: show
+              field: tpv
+              condition: checked
+      tpv_terminal:
+          span: auto
+          label:  istheweb.shop::lang.labels.terminal
+          tab: istheweb.shop::lang.labels.payment_method
+          trigger:
+              action: show
+              field: tpv
+              condition: checked
+      tpv_url_ok:
+          span: auto
+          label:  istheweb.shop::lang.labels.url_ok
+          tab: istheweb.shop::lang.labels.payment_method
+          trigger:
+              action: show
+              field: tpv
+              condition: checked
+      tpv_url_ko:
+          span: auto
+          label:  istheweb.shop::lang.labels.url_ko
+          tab: istheweb.shop::lang.labels.payment_method
+          trigger:
+              action: show
+              field: tpv
+              condition: checked
+      tpv_signature:
+          span: auto
+          label:  istheweb.shop::lang.labels.tpv_signature
+          tab: istheweb.shop::lang.labels.payment_method
+          trigger:
+              action: show
+              field: tpv
+              condition: checked
+      tpv_fee:
+          type: text
+          span: auto
+          label: istheweb.shop::lang.labels.tpv_payment_method_fee
+          tab: istheweb.shop::lang.labels.payment_method
+      stripe:
+          type: switch
+          label: istheweb.shop::lang.labels.stripe_sys
+          tab: istheweb.shop::lang.labels.payment_method
+          cssClass: 'col-3'
+      stripe_api_id:
+          span: auto
+          label:  istheweb.shop::lang.labels.stripe_api_id
+          tab: istheweb.shop::lang.labels.payment_method
+          trigger:
+              action: show
+              field: stripe
+              condition: checked
+      stripe_publishable_key:
+          span: auto
+          label:  istheweb.shop::lang.labels.stripe_publishable_key
+          tab: istheweb.shop::lang.labels.payment_method
+          trigger:
+              action: show
+              field: stripe
+              condition: checked
+      stripe_fee:
+          type: text
+          span: auto
+          label: istheweb.shop::lang.labels.stripe_payment_method_fee
+          tab: istheweb.shop::lang.labels.payment_method
+
+
+
+

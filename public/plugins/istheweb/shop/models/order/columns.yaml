@@ -1,0 +1,25 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    customer:
+        label: istheweb.shop::lang.labels.customer
+        relation: customer
+        select: concat(name, ' ' , surname)
+        searchable: true
+    order_status:
+        label: istheweb.shop::lang.order_status.label
+        relation: order_status
+        select: name
+        type: partial
+        path: status_name
+        searchable: true
+    total:
+        label: istheweb.shop::lang.labels.total
+    created_at:
+        label: istheweb.shop::lang.labels.published_at
+        type: date
+    updated_at:
+        label: istheweb.shop::lang.labels.updated_at
+        type: date

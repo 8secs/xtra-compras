@@ -1,0 +1,13 @@
+
+{{ form_ajax('onAddress') }}
+    {% set addressType = __SELF__.addressType ?: type %}
+    {% if addressType == 'billing' %}
+        {% set address = __SELF__.billingAddress %}
+    {% else %}
+        {% set address = __SELF__.deliveryAddress %}
+    {% endif %}
+    {% partial __SELF__ ~ '::_address-form' addressType=addressType address=address %}
+
+{{ form_close() }}
+
+

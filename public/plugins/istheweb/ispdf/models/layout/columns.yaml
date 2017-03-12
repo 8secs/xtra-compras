@@ -1,0 +1,22 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+
+    name:
+        label: istheweb.ispdf::lang.templates.name
+        searchable: true
+
+    code:
+        label: istheweb.ispdf::lang.templates.code
+        searchable: true
+
+    created_at:
+        label: istheweb.ispdf::lang.templates.created_at
+        type: datetime
+
+    updated_at:
+        label: istheweb.ispdf::lang.templates.updated_at
+        invisible: true
+        type: datetime

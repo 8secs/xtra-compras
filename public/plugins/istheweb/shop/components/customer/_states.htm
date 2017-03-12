@@ -1,0 +1,21 @@
+
+
+{% set states = __SELF__.billingStates ?: __SELF__.deliveryStates %}
+{% set selectedState = __SELF__.selectedBillingState ?: __SELF__.selectedDeliveryState %}
+{% set addressType = __SELF__.addressType ?: type %}
+<label for="states_{{ addressType }}">Provincia</label>
+<select id="states_{{ addressType }}" name="states_{{ addressType }}" class="form-control" required>
+    {% if states.count > 0 %}
+        <option value="">{{ 'Selecciona tu provincia'|_ }}</option>
+    {% else %}
+        <option value="">{{ 'Primero tienes que seleccionar el país'|__ }}</option>
+    {% endif %}
+    {% for state in states %}
+    {% if state.id == selectedState %}
+    <option value="{{ state.id }}" selected>{{ state.name|raw }}</option>
+    {% else %}
+    <option value="{{ state.id }}">{{ state.name|raw }}</option>
+    {% endif %}
+    {% endfor %}
+</select>
+

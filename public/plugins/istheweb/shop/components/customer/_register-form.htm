@@ -1,0 +1,24 @@
+<div class="form-group">
+    <label for="accountName">{{ 'Nombre'|_ }}</label>
+    <input name="name" type="text" class="form-control" id="accountName" required placeholder="{{ 'Introduce tu Nombre'|_ }}" value="{{ user.name }}">
+</div>
+
+<div class="form-group">
+    <label for="accountSurname">{{ 'Apellidos'|_ }}</label>
+    <input name="surname" type="text" class="form-control" id="accountSurname" required placeholder="{{ 'Introduce tus apellidos'|_ }}" value="{{ user.surname }}">
+</div>
+
+<div class="form-group">
+    <label for="accountEmail">{{ 'Email'|_ }}</label>
+    <input name="email" type="email" class="form-control" id="accountEmail" required placeholder="{{ 'Introduce tu email'|_ }}" value="{{ user.email }}">
+</div>
+
+<div class="form-group">
+    <label for="accountPhone">{{ 'Teléfono'|_ }}</label>
+    <input name="phone" type="text" class="form-control" id="accountPhone" required placeholder="{{ 'Introduce tu teléfono'|_ }}" value="{{ user.customer.phone }}">
+</div>
+
+<div class="form-group">
+    <label for="accountCif">{{ 'NIF / CIF'|_ }}</label>
+    <input name="cif" type="text" class="form-control" id="accountCif" required placeholder="{{ 'Introduce tu NIF / CIF'|_ }}" value="{{ user.customer.cif }}">
+</div>

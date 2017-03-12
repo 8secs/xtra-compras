@@ -1,0 +1,25 @@
+<form id="shoppingForm_{{ params.id }}" data-request="ShopBasket::onAddProduct"
+      data-request-data="id: {{ params.id }}"
+      data-request-update="'ShopBasket::_shopping-cart': '.nav-basket', 'ShopBasket::_cart': '.cart'"
+        data-request-success="refreshCart()">
+    {% if params.inStock() %}
+    <a href="#" class="shopping-submit" id="{{ params.id }}">
+        <div class="cart-icons">
+            <strong><span class="fa fa-shopping-cart"></span></strong>
+            <span class="cart-icon-handle"></span>
+            <span class="add-to-cart-text">{{ 'Añadir al carrito'|_ }}</span>
+        </div>
+    </a>
+    {% else %}
+    {{ 'Out of Stock'|_ }}
+    {% endif %}
+</form>
+
+{% put scripts %}
+<script type="text/javascript">
+    $('.shopping-submit').on('click', function(e){
+        $('#shoppingForm_'+this.id).submit();
+        e.preventDefault();
+    });
+</script>
+{% endput %}

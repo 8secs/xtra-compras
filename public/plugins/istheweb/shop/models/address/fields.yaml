@@ -1,0 +1,33 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    customer:
+        label: istheweb.shop::lang.labels.customer
+        type: recordfinder
+        list: $/istheweb/shop/models/customer/columns.yaml
+        prompt: Haz click en el botón %s para encontrar un cliente
+        nameFrom: username
+    address_1:
+        label: istheweb.shop::lang.labels.address_1
+        span: auto
+    address_2:
+        label: istheweb.shop::lang.labels.address_2
+        span: auto
+    city:
+        label: istheweb.shop::lang.labels.city
+        span: auto
+    postcode:
+        label: istheweb.shop::lang.labels.postalcode
+        span: auto
+    country:
+        label: istheweb.shop::lang.labels.country
+        type: dropdown
+        default: Selecciona un país
+        span: auto
+    state:
+        label: istheweb.shop::lang.labels.state
+        type: dropdown
+        dependsOn: country
+        span: auto

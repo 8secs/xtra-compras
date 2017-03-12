@@ -1,0 +1,82 @@
+<style type="text/css">
+    body,
+    html,
+    .body {
+        background: #f3f3f3 !important;
+    }
+    .header {
+        background: #8a8a8a;
+    }
+    .header .columns {
+        padding-bottom: 0;
+    }
+    .header p {
+        color: #fff;
+        padding-top: 15px;
+    }
+    .header .wrapper-inner {
+        padding: 20px;
+    }
+    .header .container {
+        background: transparent;
+    }
+    table.button.facebook table td {
+        background: #3B5998 !important;
+        border-color: #3B5998;
+    }
+    table.button.twitter table td {
+        background: #1daced !important;
+        border-color: #1daced;
+    }
+    table.button.google table td {
+        background: #DB4A39 !important;
+        border-color: #DB4A39;
+    }
+    .wrapper.secondary {
+        background: #f3f3f3;
+    }
+</style>
+
+<container>
+
+    <spacer size="16"></spacer>
+
+    <row class="footer text-center">
+        <columns large="3">
+            <img src="https://dxbwatch.es/storage/app/media/logo.png" alt="Dxbwatch">
+        </columns>
+    </row>
+
+    <row>
+        <columns>
+            <h1>Pedido enviado del sitio web: {{ site }}. Pedido Nº {{ pdfNumber }} </h1>
+            <p>Estimado {{ name }}. <br>
+                Su pedido con fecha {{ 'now'|date('d-m-Y') }} ha sido enviado, lo recibirá en las próximas 24/48h a través de MRW.
+            </p>
+
+
+            <spacer size="16"></spacer>
+
+            <callout class="secondary">
+                <row>
+                    <columns large="6">
+                        <p>
+                            <strong>Más detalles sobre su pedido aquí:</strong><br>
+                        </p>
+                        <p>
+                            <strong>El paquete 1(de 1) ha sido empaquetado y está siendo gestionado para su entrega por MRW .</strong><br>
+                            Si quieres saber el estado de su pedido puede consultar en: Tlf. MRW 95412 25 27
+                        </p>
+                        <p>Esperamos que los productos adquiridos sean de su plena satisfacción y nos alegramos de su próxima visita.<br>
+                            Reciba un cordial saludo,<br>
+                            <span style="text-align:center;">GRACIAS por confiar en el equipo de: <a href="https://dxbwatch.es">www.dxbwatch.es</a></span>
+                        </p>
+                    </columns>
+
+                </row>
+            </callout>
+
+        </columns>
+    </row>
+
+</container>

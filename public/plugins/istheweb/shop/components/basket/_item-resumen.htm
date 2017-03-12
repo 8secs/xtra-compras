@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-xs-5">
+        <img src="{{ item.picture.getThumb(150,150) }}" alt="{{ item.name }}" class="img-fluid" />
+    </div>
+    <div class="col-xs-6">
+        <small>{{ item.qty }} x </small><br>
+        <h6><a href="{{ '/product'|page }}/{{ item.slug }}">{{ item.name }}</a></h6>
+        <p>{{ __SELF__.shopCurrency.symbol_left }}{{ item.price }}{{ __SELF__.shopCurrency.symbol_right }} </p>
+    </div>
+</div>
+<hr/>

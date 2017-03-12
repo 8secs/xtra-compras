@@ -1,0 +1,11 @@
+{% set sizeType = __SELF__.size_filters[0] %}
+{% set typeName = __SELF__.size_filters[0].name %}
+{# __SELF__.size_filters #}
+<h3 class="sidebar-title">{{ typeName }}</h3>
+{% if sizeType.filters.count > 0 %}
+<div class="sidebar-wrapper padding-0 fix">
+{% for filter in sizeType.filters %}
+    <a href="">{{ filter.name }}</a>
+{% endfor %}
+</div>
+{% endif %}

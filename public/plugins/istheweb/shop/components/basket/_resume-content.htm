@@ -1,0 +1,49 @@
+{% if __SELF__.basketCount > 0 %}
+<div class="resume">
+    {% for item in __SELF__.basketItems %}
+        {% partial __SELF__~'::_item-resumen' item=item page='order' %}
+    {% endfor %}
+    <div class="row">
+        <div class="col-xs-8">
+            {{ 'Subtotal del pedido'|_ }}
+        </div>
+        <div class="col-xs-4 text-right">{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.basketSubtotal|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-xs-8">
+            {{ 'Gastos de envío'|_ }}
+        </div>
+        <div class="col-xs-4 text-right">{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.selectedShippingRate|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-xs-8">
+            {{ 'Impuestos'|_ }}
+        </div>
+        <div class="col-xs-4 text-right">{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.basketTaxRate|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-xs-8">
+            {{ 'Comision metodo de pago'|_ }}
+        </div>
+        <div class="col-xs-4 text-right">{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.basketPaymentFee|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</div>
+    </div>
+    <hr/>
+    <div class="row">
+        <div class="col-xs-8">
+            <strong>{{ 'Total'|_ }}</strong>
+        </div>
+        <div class="col-xs-4 text-right"><strong>{{ __SELF__.shopCurrency.symbol_left }}{{ __SELF__.basketTotal|number_format(2) }}{{ __SELF__.shopCurrency.symbol_right }}</strong></div>
+    </div>
+    <hr/>
+</div>
+{% else %}
+    <div class="row">
+        <div class="col-xs-12">
+            {{ 'No hay artículos en tu carrito.'|_ }} {{ __SELF__.basketItems }}
+        </div>
+
+    </div>
+{% endif %}

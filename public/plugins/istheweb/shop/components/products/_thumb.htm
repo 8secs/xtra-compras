@@ -1,0 +1,4 @@
+<a href="{{ 'shop/product'|page({ slug: params.slug }) }}">
+    <img class="img-fluid primary-image" src="{{ params.picture.getPath() }}" alt="{{ params.name }}">
+    <img class="img-fluid secondary-image" src="{{ params.pictures[1].getPath() }}" alt="{{ params.name }}">
+</a>

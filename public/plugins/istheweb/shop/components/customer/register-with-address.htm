@@ -1,0 +1,21 @@
+{% if user %}
+    {{ form_ajax('onUpdate', { model: user }) }}
+{% else %}
+    {{ form_ajax('onRegister') }}
+{% endif %}
+<input type="hidden" name="redirect" value="{{ this.page.baseFileName|page }}?register=1" />
+{% partial __SELF__ ~ '::_register-form' %}
+
+{% set address = __SELF__.billingAddress %}
+{% set addressType = 'billing' %}
+
+{% partial __SELF__ ~ '::_address-form' addressType=addressType address=address %}
+
+{% if not user %}
+    {% partial __SELF__ ~ '::_register-access' %}
+{% endif %}
+<button type="submit" class="button color-hover">{% if checkout %}Siguiente {% else %}Guardar {% endif %}</button>
+
+{{ form_close() }}
+
+{% partial 'Customer::_countries_form' type='billing' %}
