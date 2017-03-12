@@ -1,0 +1,43 @@
+1489326010a:1:{s:14:"common/nav.htm";a:5:{s:8:"fileName";s:14:"common/nav.htm";s:7:"content";s:759:"{% import _self as nav %}
+
+{% macro render_menu(items) %}
+{% import _self as nav %}
+
+{% for item in items %}
+{% set itemName = item.title %}
+
+<li class="{{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}">
+    <a href="{% if item.code %}#{{ item.code}}{% else %}{{ item.url }}{% endif %}" class="scroll-section">{{ itemName|_ }}</a>
+    {% if item.items %}
+    <ul class="sub-menu">{{ nav.render_menu(item.items) }}</ul>
+    {% endif %}
+</li>
+{% endfor %}
+{% endmacro %}
+<nav class="main-menu" id="main-menu">
+    <ul class="nav navbar-nav main-nav {% if type is not empty %}nav-padding-top pull-xs-left pull-sm-right{% endif %}">
+        {{ nav.render_menu(mainMenu.menuItems) }}
+    </ul>
+</nav>
+
+";s:5:"mtime";i:1478699600;s:6:"markup";s:757:"{% import _self as nav %}
+
+{% macro render_menu(items) %}
+{% import _self as nav %}
+
+{% for item in items %}
+{% set itemName = item.title %}
+
+<li class="{{ item.isActive ? 'active' : '' }} {{ item.isChildActive ? 'child-active' : '' }} {{ item.viewBag.cssClass }}">
+    <a href="{% if item.code %}#{{ item.code}}{% else %}{{ item.url }}{% endif %}" class="scroll-section">{{ itemName|_ }}</a>
+    {% if item.items %}
+    <ul class="sub-menu">{{ nav.render_menu(item.items) }}</ul>
+    {% endif %}
+</li>
+{% endfor %}
+{% endmacro %}
+<nav class="main-menu" id="main-menu">
+    <ul class="nav navbar-nav main-nav {% if type is not empty %}nav-padding-top pull-xs-left pull-sm-right{% endif %}">
+        {{ nav.render_menu(mainMenu.menuItems) }}
+    </ul>
+</nav>";s:4:"code";N;}}

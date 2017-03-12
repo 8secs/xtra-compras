@@ -1,0 +1,59 @@
+1489326011a:1:{s:18:"common/scripts.htm";a:7:{s:8:"fileName";s:18:"common/scripts.htm";s:7:"content";s:1221:"description = "All javascript theme"
+
+[viewBag]
+==
+<!-- Scripts -->
+<!--<script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> Tether for Bootstrap -->
+{% component 'googleTracker' %}
+<script src="{{ [
+    'assets/js/jquery.js',
+    'node_modules/tether/dist/js/tether.min.js',
+    'assets/js/bootstrap.min.js',
+    'assets/vendor/bootstrap/js/alert.js',
+    'node_modules/jquery.easing/jquery.easing.min.js',
+    'node_modules/owl-carousel-2-beta/dist/owl.carousel.min.js',
+    'assets/vendor/magic-popup/dist/jquery.magnific-popup.min.js',
+    'node_modules/jquery-sticky/jquery.sticky.js',
+    'node_modules/wowjs/dist/wow.min.js',
+    'node_modules/jquery-toast-plugin/dist/jquery.toast.min.js',
+    'assets/vendor/meanMenu/jquery.meanmenu.min.js',
+    'assets/vendor/noUiSlider/nouislider.min.js',
+    'assets/vendor/elevatezoom/jquery.elevateZoom-3.0.8.min.js',
+    'assets/js/jquery.treeview.js',
+    'assets/js/bootstrap.min.js',
+    'assets/js/app.js'
+]|theme }}"></script>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+
+{% framework extras %}
+{% scripts %}";s:5:"mtime";i:1479722665;s:6:"markup";s:1170:"<!-- Scripts -->
+<!--<script src="https://www.atlasestateagents.co.uk/javascript/tether.min.js"></script> Tether for Bootstrap -->
+{% component 'googleTracker' %}
+<script src="{{ [
+    'assets/js/jquery.js',
+    'node_modules/tether/dist/js/tether.min.js',
+    'assets/js/bootstrap.min.js',
+    'assets/vendor/bootstrap/js/alert.js',
+    'node_modules/jquery.easing/jquery.easing.min.js',
+    'node_modules/owl-carousel-2-beta/dist/owl.carousel.min.js',
+    'assets/vendor/magic-popup/dist/jquery.magnific-popup.min.js',
+    'node_modules/jquery-sticky/jquery.sticky.js',
+    'node_modules/wowjs/dist/wow.min.js',
+    'node_modules/jquery-toast-plugin/dist/jquery.toast.min.js',
+    'assets/vendor/meanMenu/jquery.meanmenu.min.js',
+    'assets/vendor/noUiSlider/nouislider.min.js',
+    'assets/vendor/elevatezoom/jquery.elevateZoom-3.0.8.min.js',
+    'assets/js/jquery.treeview.js',
+    'assets/js/bootstrap.min.js',
+    'assets/js/app.js'
+]|theme }}"></script>
+
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+
+{% framework extras %}
+{% scripts %}";s:4:"code";N;s:11:"description";s:20:"All javascript theme";s:7:"viewBag";a:0:{}}}

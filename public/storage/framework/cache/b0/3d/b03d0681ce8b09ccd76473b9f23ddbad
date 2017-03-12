@@ -1,0 +1,79 @@
+1489326010a:1:{s:24:"header/header-bottom.htm";a:5:{s:8:"fileName";s:24:"header/header-bottom.htm";s:7:"content";s:1521:"<!-- header-bottom start -->
+<div class="container">
+    <div class="row">
+        <div class="{% if layout != 'shop' %}col-xs-12 col-md-3{% else %}col-lg-6 col-md-6 col-sm-8 col-xs-12{% endif %}">
+            <div class="logo">
+                <a href="{{ '/'|app }}"><img src="{{ company.logo.getPath }}" alt="{{ company.name }}" height="50" /></a>
+            </div>
+        </div>
+        <div class="{% if layout != 'shop' %}col-xs-12 col-md-9{% else %}col-lg-6 col-md-6 col-sm-4 col-xs-12{% endif %}">
+            {% if layout == 'shop' %}
+                <div class="shop-cart-search">
+                    <!-- cart-total start
+                    <div class="cart-total">
+                        {# partial 'ShopBasket::_shopping-cart' #}
+                    </div>
+                    <!-- cart-total end -->
+                    <!-- header-search start -->
+                    <div class="header-search">
+                        {% partial 'Products::_search' %}
+                    </div>
+                    <!-- header-search end -->
+                </div>
+            {% else %}
+                <div class="mainmenu">
+                    {% partial 'common/nav' type="short" %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if layout == 'shop' %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="mainmenu">
+                {% partial 'common/nav' %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+<!-- header-bottom end -->";s:5:"mtime";i:1478699600;s:6:"markup";s:1521:"<!-- header-bottom start -->
+<div class="container">
+    <div class="row">
+        <div class="{% if layout != 'shop' %}col-xs-12 col-md-3{% else %}col-lg-6 col-md-6 col-sm-8 col-xs-12{% endif %}">
+            <div class="logo">
+                <a href="{{ '/'|app }}"><img src="{{ company.logo.getPath }}" alt="{{ company.name }}" height="50" /></a>
+            </div>
+        </div>
+        <div class="{% if layout != 'shop' %}col-xs-12 col-md-9{% else %}col-lg-6 col-md-6 col-sm-4 col-xs-12{% endif %}">
+            {% if layout == 'shop' %}
+                <div class="shop-cart-search">
+                    <!-- cart-total start
+                    <div class="cart-total">
+                        {# partial 'ShopBasket::_shopping-cart' #}
+                    </div>
+                    <!-- cart-total end -->
+                    <!-- header-search start -->
+                    <div class="header-search">
+                        {% partial 'Products::_search' %}
+                    </div>
+                    <!-- header-search end -->
+                </div>
+            {% else %}
+                <div class="mainmenu">
+                    {% partial 'common/nav' type="short" %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    {% if layout == 'shop' %}
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="mainmenu">
+                {% partial 'common/nav' %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+<!-- header-bottom end -->";s:4:"code";N;}}

@@ -1,0 +1,9 @@
+{% if layout != 'landing' %}
+<div class="header-top">
+    {% partial 'header/header-top' layout=layout %}
+</div>
+{% endif %}
+<div class="header-bottom">
+    {% partial 'header/header-bottom' layout=layout %}
+</div>
+

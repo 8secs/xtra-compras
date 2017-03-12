@@ -56,7 +56,7 @@ return [
             'driver'    => 'mysql',
             'host'      => '127.0.0.1',
             'port'      => '',
-            'database'  => 'scotchbox',
+            'database'  => 'xtraice_compras',
             'username'  => 'root',
             'password'  => 'root',
             'charset'   => 'utf8',

@@ -1,0 +1,47 @@
+description = "Default Xtraice layout"
+
+[staticMenu mainMenu]
+code = "default-menu"
+
+[googleTracker]
+
+[localePicker]
+forceUrl = 0
+
+[session]
+security = "all"
+
+==
+<!DOCTYPE html>
+<html>
+<head>
+    {% partial 'common/meta' %}
+</head>
+<body>
+
+{% partial 'common/preloader' %}
+
+<div id="wrapper" class="page-wrap">
+    <header id="header" class="header">
+
+        {% partial 'header/header' layout=this.param.from %}
+
+    </header>
+
+    <!-- START main wrapper section -->
+    <section>
+        {% page %}
+    </section>
+    <!--/ END main wrapper section -->
+
+    <footer id="footer" class="footer content-block">
+        {% partial 'common/footer' %}
+    </footer>
+
+    {% partial 'common/footer-bottom' %}
+
+</div>
+
+{% partial 'common/scripts' %}
+</body>
+</html>

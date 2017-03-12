@@ -1,0 +1,17 @@
+1489326010a:1:{s:17:"header/header.htm";a:5:{s:8:"fileName";s:17:"header/header.htm";s:7:"content";s:216:"{% if layout != 'landing' %}
+<div class="header-top">
+    {% partial 'header/header-top' layout=layout %}
+</div>
+{% endif %}
+<div class="header-bottom">
+    {% partial 'header/header-bottom' layout=layout %}
+</div>
+
+";s:5:"mtime";i:1476780956;s:6:"markup";s:214:"{% if layout != 'landing' %}
+<div class="header-top">
+    {% partial 'header/header-top' layout=layout %}
+</div>
+{% endif %}
+<div class="header-bottom">
+    {% partial 'header/header-bottom' layout=layout %}
+</div>";s:4:"code";N;}}
